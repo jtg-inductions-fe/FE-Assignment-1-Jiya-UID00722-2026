@@ -1,11 +1,11 @@
 # Getting Started
 
-### Prerequisites
+## Prerequisites
 
 -   **Node.js**: Version 18+ or 20+. You can download and install it from nodejs.org.
 -   **npm**: Node.js package manager, which comes bundled with Node.js.
 
-### Installing
+## Installing
 
 To set up the project on your local environment, follow these steps:
 

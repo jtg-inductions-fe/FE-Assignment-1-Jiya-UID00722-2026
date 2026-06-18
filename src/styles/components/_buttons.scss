@@ -43,7 +43,7 @@
 
         &:hover {
             background-color: $primary-color;
-            border: none;
+            border-color: transparent;
             color: $background-color;
             @include shadow-md;
         }
