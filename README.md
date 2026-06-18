@@ -1,4 +1,4 @@
-## Getting Started
+# Getting Started
 
 ### Prerequisites
 
@@ -45,13 +45,6 @@ To set up the project on your local environment, follow these steps:
 
     The app will typically be available at http://localhost:3000, but check the terminal output for the exact URL.
 
-    > **_NOTE:_** Note: If you want to change the server's port number, you can do so by modifying the **vite.config.js** file at the root level of the project:
-
-    ```js
-    server{
-        port:<New Port>,
-    }
-    ```
 
 5. **Build the Project**
 
@@ -62,6 +55,8 @@ To set up the project on your local environment, follow these steps:
     This command will generate the optimized files in the dist directory.
 
 6. **Lint the Code**
+
     ```bash
     npm run lint
     ```
+
