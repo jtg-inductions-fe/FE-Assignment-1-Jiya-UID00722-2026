@@ -1,0 +1,73 @@
+@mixin text($size, $weight: 400, $line-height: 1.5,$family: $font-primary) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+    font-family: $family;
+}
+
+@mixin respond($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @error "Unknown breakpoint `#{$breakpoint}`. Expected one of: #{map-keys($breakpoints)}";
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex($direction: row,
+    $justify: flex-start,
+    $align: stretch,
+    $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin grid($columns, $gap: 1rem) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin shadow-xs {
+    box-shadow: 0px 43px 26px 0px #0000000D,
+        0px 77px 31px 0px #00000003,
+        0px 120px 34px 0px #00000000;
+}
+
+@mixin shadow-sm {
+    box-shadow:
+        0px 19px 19px 0px #00000017,
+        0px 43px 26px 0px #0000000D,
+        0px 77px 31px 0px #00000003,
+        0px 120px 34px 0px #00000000;
+}
+
+@mixin shadow-md {
+    box-shadow:
+        0px 0px 0px 0px #00000014,
+        0px 7px 16px 0px #00000012,
+        0px 29px 29px 0px #0000000F,
+        0px 65px 39px 0px #0000000A,
+        0px 116px 46px 0px #00000003,
+        0px 181px 51px 0px #00000000;
+}
+
+@mixin shadow-xl {
+    box-shadow:
+        0px 0px 0px 0px #0000001A,
+        0px 5px 11px 0px #0000001A,
+        0px 20px 20px 0px #00000017,
+        0px 45px 27px 0px #0000000D,
+        0px 81px 32px 0px #00000003,
+        0px 126px 35px 0px #00000000;
+}

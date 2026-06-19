@@ -1,0 +1,51 @@
+@use '../abstracts/' as *;
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 100px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &--primary {
+        background-color: $primary-color;
+        color: $background-color;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+
+    &--secondary {
+        background-color: $secondary-color;
+        color: $background-color;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+
+    &--orange {
+        background-color: $orange-color;
+        color: $background-color;
+
+        &:hover {
+            background-color: darken($orange-color, 10%);
+        }
+    }
+
+    &--carousel-btn {
+        background-color: $background-color;
+        color: $text-900;
+        border: 1px solid $text-400;
+
+        &:hover {
+            background-color: $primary-color;
+            border-color: transparent;
+            color: $background-color;
+            @include shadow-md;
+        }
+    }
+}
