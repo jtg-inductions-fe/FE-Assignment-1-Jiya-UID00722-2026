@@ -84,3 +84,11 @@
         max-width: 1250px;
     }
 }
+
+@mixin link-style-none{
+    text-decoration: none;
+}
+
+@mixin list-style-none {
+    list-style: none;
+}
