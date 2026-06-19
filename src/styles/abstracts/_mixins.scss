@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 @use './variables' as *;
 @mixin text($size, $weight: 400, $line-height: 1.5,$family: $font-primary) {
+=======
+@mixin text($size, $weight: 400, $line-height: 1.5, $family: $font-primary) {
+>>>>>>> dd07202 ([JG_A1_NAV]: Enhance default UI of borders while navigating)
     font-size: $size;
     font-weight: $weight;
     line-height: $line-height;
@@ -11,7 +15,9 @@
         @media (min-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
-    } @else {
+    }
+
+    @else {
         @error "Unknown breakpoint `#{$breakpoint}`. Expected one of: #{map-keys($breakpoints)}";
     }
 }
@@ -85,10 +91,16 @@
     }
 }
 
-@mixin link-style-none{
+@mixin link-style-none {
     text-decoration: none;
 }
 
 @mixin list-style-none {
     list-style: none;
+}
+
+@mixin focus-visible($color: $primary-color, $offset: 4px) {
+    outline: none;
+    outline: 3px solid $color;
+    outline-offset: $offset;
 }

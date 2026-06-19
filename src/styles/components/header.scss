@@ -26,6 +26,18 @@
     }
 }
 
+.nav__logo > a:focus-visible {
+    @include focus-visible($primary-color);
+}
+
+.nav__links li>a:focus-visible {
+    @include focus-visible($primary-color);
+}
+
+.nav__actions > button:focus-visible {
+    @include focus-visible($primary-color, 3px);
+}
+
 .nav__hamburger {
     display: none;
 }
@@ -79,12 +91,6 @@
         .nav__links li>a {
             color: $background-color;
             font-size: 1.8rem;
-        }
-
-        .nav__links li>a:focus-visible {
-            outline: none;
-            outline: 3px solid #3b82f6;
-            outline-offset: 3px;
         }
 
         .nav__links li>a.active {
