@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .nav {
-    @include flex(row,space-around,center,40px);
+    @include flex(row, space-around, center, 40px);
     padding: 72px 32px;
 }
 
@@ -17,7 +17,7 @@
         font-weight: 700;
     }
 
-    li>a:hover{
+    li>a:hover {
         color: $text-700;
     }
 
@@ -33,7 +33,7 @@
 @media (max-width: map-get($breakpoints, lg)) {
     .nav {
         padding: 32px 26px;
-        gap:0;
+        gap: 0;
 
         .nav__logo {
             order: 2;
@@ -71,7 +71,7 @@
             height: 100vh;
             flex-direction: column;
             @include flex-center;
-            align-items:flex-end;
+            align-items: flex-end;
             transition: all 0.3s;
             padding-right: 40px;
         }
@@ -81,8 +81,15 @@
             font-size: 1.8rem;
         }
 
+        .nav__links li>a:focus-visible {
+            outline: none;
+            outline: 3px solid #3b82f6;
+            outline-offset: 3px;
+        }
+
         .nav__links li>a.active {
-            color: $text-500;;
+            color: $text-500;
+            ;
         }
 
         .nav__links-list--open {

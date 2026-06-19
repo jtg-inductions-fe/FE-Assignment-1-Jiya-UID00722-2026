@@ -84,6 +84,11 @@
     color: #FFFFFF;
     font-size: 1.8rem;
   }
+  .nav .nav__links li > a:focus-visible {
+    outline: none;
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+  }
   .nav .nav__links li > a.active {
     color: rgba(25, 24, 37, 0.5019607843);
   }
