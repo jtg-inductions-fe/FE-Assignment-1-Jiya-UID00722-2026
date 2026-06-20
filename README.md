@@ -1,3 +1,7 @@
+# Description
+
+This is an Assignment for creating a single page application for a travelling agency - Travlog
+
 # Getting Started
 
 ## Prerequisites
@@ -12,6 +16,10 @@ To set up the project on your local environment, follow these steps:
 1. **Clone the Repository**
 
     First, you need to clone the repository.
+
+    ```bash
+    git clone https://github.com/jtg-inductions-fe/FE-Assignment-1-Jiya-UID00722-2026
+    ```
 
 2. **nvm (Node Version Manager)**: If Node 18.18.0+ is already installed and active, you can skip this step; otherwise use nvm. Here's how:to use it:
 
