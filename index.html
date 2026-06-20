@@ -15,27 +15,26 @@
 </head>
 
 <body>
-    <header class="nav">
-        <div class="nav__logo">
+    <header class="nav-container">
+        <div class="nav-container__logo">
             <a href="/" aria-label="Travlog Homepage">
                 <img src="/assets/images/logo.svg" alt="Travlog Logo">
             </a>
         </div>
         <nav aria-label="Main Navigation">
-            <ul class="nav__links">
-                <li><a class="active" href="#" aria-current="page">Home</a></li>
-                <li><a href="#">Discover</a></li>
-                <li><a href="#">Special Deals</a></li>
-                <li><a href="#">Contact</a></li>
-
+            <ul class="nav-container__links" id="navLinks">
+                <li><a class="nav-container__link nav-container__link--active" href="#" aria-current="page">Home</a></li>
+                <li><a class="nav-container__link" href="#">Discover</a></li>
+                <li><a class="nav-container__link" href="#">Special Deals</a></li>
+                <li><a class="nav-container__link" href="#">Contact</a></li>
             </ul>
         </nav>
-        <div class="nav__actions" aria-label="User Account Actions">
+        <div class="nav-container__actions" aria-label="User Account Actions">
             <button class="btn btn--muted">Log In</button>
             <button class="btn btn--primary">Sign Up</button>
         </div>
-        <div class="nav__hamburger">
-            <button type="button" class="btn btn--primary nav__hamburger-btn" id="hamburgerBtn" aria-controls="sidebar">
+        <div class="nav-container__hamburger">
+            <button type="button" class="btn btn--primary nav-container__hamburger-btn" id="hamburgerBtn" aria-controls="sidebar">
                 <i class="fas fa-bars"></i>
             </button>
         </div>

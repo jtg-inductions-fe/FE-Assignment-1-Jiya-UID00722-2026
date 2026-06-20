@@ -1,9 +1,9 @@
 const hamburger = document.getElementById('hamburgerBtn');
-const navLinksList = document.querySelector('.nav__links');
+const navLinksList = document.getElementById('navLinks');
 const menuLinks = navLinksList.querySelectorAll('a');
 
 function toggleMenu() {
-    const isOpen = navLinksList.classList.toggle('nav__links-list--open');
+    const isOpen = navLinksList.classList.toggle('nav-container__links--open');
 
     hamburger.setAttribute('aria-expanded', isOpen);
 

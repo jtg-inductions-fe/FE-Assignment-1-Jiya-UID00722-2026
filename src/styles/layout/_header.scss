@@ -1,11 +1,11 @@
 @use '../abstracts/' as *;
 
-.nav {
+.nav-container {
     @include flex(row, space-around, center, 40px);
     padding: 72px 32px;
 }
 
-.nav__links {
+.nav-container__links {
     @include list-style-none;
     display: flex;
     gap: 70px;
@@ -21,39 +21,39 @@
         color: $text-700;
     }
 
-    .active {
+    .nav-container__link--active {
         color: $text-700;
     }
 }
 
-.nav__logo > a:focus-visible {
+.nav-container__logo > a:focus-visible {
     @include focus-visible($primary-color);
 }
 
-.nav__links li>a:focus-visible {
+.nav-container__links li>a:focus-visible {
     @include focus-visible($primary-color);
 }
 
-.nav__actions > button:focus-visible {
+.nav-container__actions > button:focus-visible {
     @include focus-visible($primary-color, 3px);
 }
 
-.nav__hamburger {
+.nav-container__hamburger {
     display: none;
 }
 
 @media (max-width: map-get($breakpoints, lg)) {
-    .nav {
+    .nav-container {
         padding: 32px 26px;
         gap: 0;
 
-        .nav__logo {
+        .nav-container__logo {
             order: 2;
             @include flex-center;
             flex: 1;
         }
 
-        .nav__hamburger {
+        .nav-container__hamburger {
             display: block;
             order: 1;
             flex: 1;
@@ -61,20 +61,20 @@
             left: 40px;
         }
 
-        .nav__hamburger-btn {
+        .nav-container__hamburger-btn {
             padding: 5px 8px;
             font-size: 2.7rem;
             border-radius: 10px;
             width: fit-content;
         }
 
-        .nav__actions {
+        .nav-container__actions {
             order: 3;
             @include flex-center;
             flex: 1;
         }
 
-        .nav__links {
+        .nav-container__links {
             right: -100%;
             position: fixed;
             top: 0;
@@ -88,36 +88,35 @@
             padding-right: 40px;
         }
 
-        .nav__links li>a {
+        .nav-container__links li>a {
             color: $background-color;
             font-size: 1.8rem;
         }
 
-        .nav__links li>a.active {
+        .nav-container__links li>a.nav-container__link--active {
             color: $text-500;
-            ;
         }
 
-        .nav__links-list--open {
+        .nav-container__links--open {
             right: 0;
         }
     }
 }
 
 @media (max-width: map-get($breakpoints, sm)) {
-    .nav {
+    .nav-container {
         padding: 37px 15px;
 
-        .nav__actions {
+        .nav-container__actions {
             display: none;
         }
 
-        .nav__logo {
+        .nav-container__logo {
             order: 1;
             justify-content: flex-start;
         }
 
-        .nav__hamburger {
+        .nav-container__hamburger {
             order: 2;
             display: flex;
             justify-content: flex-end;
