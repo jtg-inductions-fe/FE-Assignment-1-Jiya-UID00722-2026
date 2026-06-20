@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
--   **Node.js**: Version 18+ or 20+. You can download and install it from nodejs.org.
+-   **Node.js**: Version 18.18.0+ (or 20+). You can download and install it from nodejs.org.
 -   **npm**: Node.js package manager, which comes bundled with Node.js.
 
 ## Installing
@@ -13,7 +13,7 @@ To set up the project on your local environment, follow these steps:
 
     First, you need to clone the repository.
 
-2. **nvm (Node Version Manager)**: If the required Node version 18+ is already installed and active, you can skip this step else you can use nvm (Node Version Manager). Here's how to use it:
+2. **nvm (Node Version Manager)**: If Node 18.18.0+ is already installed and active, you can skip this step; otherwise use nvm. Here's how:to use it:
 
     - **Switch Node Version**: If the required Node version is already installed, run:
 
