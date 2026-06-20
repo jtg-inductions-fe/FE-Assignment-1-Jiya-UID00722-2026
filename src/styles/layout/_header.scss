@@ -98,12 +98,7 @@
 
 /* Tablet */
 @media (min-width: map-get($breakpoints, sm)) {
-    .container{
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-    }
-    nav {
+    .nav {
         position: absolute
     }
 
