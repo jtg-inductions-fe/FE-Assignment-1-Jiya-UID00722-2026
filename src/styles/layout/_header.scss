@@ -5,7 +5,7 @@
     padding: 72px 32px;
 
     .nav-container__logo>a:focus-visible {
-        @include focus-visible($primary-color);
+        @include focus-visible($primary-color, 3px);
     }
 
     .nav-container__actions>button:focus-visible {
@@ -36,7 +36,7 @@
             color: $text-700;
         }
 
-        .nav-container__links li>a:focus-visible {
+        .nav-container__link:focus-visible {
             @include focus-visible($primary-color);
         }
 
@@ -63,6 +63,10 @@
             flex: 1;
             position: relative;
             left: 40px;
+        }
+
+        .nav-container__hamburger-btn:focus-visible {
+            @include focus-visible($primary-color, 3px);
         }
 
         .nav-container__hamburger-btn {
@@ -107,6 +111,14 @@
                 position: absolute;
                 top: 8%;
             }
+
+            .nav-container__close-btn:focus-visible {
+                @include focus-visible($background-color, 5px);
+            }
+
+            .nav-container__link:focus-visible {
+            @include focus-visible($background-color);
+        }
         }
 
         .nav-container__links--open {

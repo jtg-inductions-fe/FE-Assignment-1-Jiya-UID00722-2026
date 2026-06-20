@@ -1,6 +1,5 @@
 const hamburger = document.getElementById('hamburgerBtn');
 const navLinksList = document.getElementById('navLinks');
-const menuLinks = navLinksList.querySelectorAll('a');
 const closeBtn = document.getElementById("closeBtn");
 
 /**
@@ -15,7 +14,11 @@ function toggleMenu() {
 
     if (isOpen) {
         // Move focus to first menu item
-        menuLinks[0].focus();
+        closeBtn.focus();
+    }
+    if (!isOpen) {
+        // Move focus back to hamburger button
+        hamburger.focus();
     }
 }
 
