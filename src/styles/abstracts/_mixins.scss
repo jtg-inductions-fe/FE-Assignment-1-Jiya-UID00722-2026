@@ -104,3 +104,8 @@
     outline: 3px solid $color;
     outline-offset: $offset;
 }
+
+@mixin container{
+    max-width: 1250px;
+    margin: auto;
+}
