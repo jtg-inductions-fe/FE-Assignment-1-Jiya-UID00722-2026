@@ -1,4 +1,6 @@
+@use "./variables" as *;
+
 @font-face {
-  font-family: "Circular Std";
+  font-family: $font-primary;
   src: url("../../../assets/fonts/circular-std-medium-500.ttf") format("truetype");
 }
