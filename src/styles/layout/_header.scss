@@ -1,8 +1,90 @@
 @use '../abstracts/' as *;
 
 .nav-container {
-    @include flex(row, space-around, center, 40px);
-    padding: 72px 32px;
+    @include flex(row, space-between, center, 0);
+    padding: 37px 15px;
+
+    .nav-container__logo {
+        order: 1;
+        @include flex-center;
+        justify-content: flex-start;
+        flex: 1;
+    }
+
+    .nav-container__actions {
+        display: none;
+    }
+
+    .nav-container__hamburger {
+        display: flex;
+        order: 2;
+        justify-content: flex-end;
+        flex: 1;
+    }
+
+    .nav-container__hamburger-btn {
+        padding: 5px 8px;
+        font-size: 2.7rem;
+        border-radius: 10px;
+        width: fit-content;
+    }
+
+    .nav-container__hamburger-btn:focus-visible {
+        @include focus-visible($primary-color, 3px);
+    }
+
+    .nav-container__links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 55%;
+        height: 100vh;
+        background-color: $primary-color;
+        flex-direction: column;
+        @include flex-center;
+        align-items: flex-end;
+        padding-right: 40px;
+        transition: all 0.3s;
+        z-index: 1000;
+        @include list-style-none;
+        gap: 70px;
+
+        .nav-container__link {
+            @include link-style-none;
+            color: $background-color;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-container__link:hover {
+            color: $background-color;
+        }
+
+        .nav-container__link--active {
+            color: $text-500;
+        }
+
+        .nav-container__link:focus-visible {
+            @include focus-visible($background-color);
+        }
+
+        .nav-container__close-btn {
+            display: block;
+            padding: 0;
+            font-size: 2.7rem;
+            position: absolute;
+            top: 8%;
+        }
+
+        .nav-container__close-btn:focus-visible {
+            @include focus-visible($background-color, 5px);
+        }
+    }
+
+    .nav-container__links--open {
+        right: 0;
+    }
+
 
     .nav-container__logo>a:focus-visible {
         @include focus-visible($primary-color, 3px);
@@ -11,150 +93,96 @@
     .nav-container__actions>button:focus-visible {
         @include focus-visible($primary-color, 3px);
     }
-
-    .nav-container__hamburger {
-        display: none;
-    }
-
-    .nav-container__links {
-        @include list-style-none;
-        display: flex;
-        gap: 70px;
-
-        .nav-container__link {
-            @include link-style-none;
-            color: $text-500;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .nav-container__link:hover {
-            color: $text-700;
-        }
-
-        .nav-container__link--active {
-            color: $text-700;
-        }
-
-        .nav-container__link:focus-visible {
-            @include focus-visible($primary-color);
-        }
-
-        .nav-container__close-btn {
-            display: none;
-        }
-    }
 }
 
-@media (max-width: map-get($breakpoints, lg)) {
+
+/* Tablet */
+@media (min-width: map-get($breakpoints, sm)) {
+
+    nav {
+        position: absolute
+    }
+
     .nav-container {
-        padding: 32px 26px;
-        gap: 0;
-
-        .nav-container__logo {
-            order: 2;
-            @include flex-center;
-            flex: 1;
-        }
-
-        .nav-container__hamburger {
-            display: block;
-            order: 1;
-            flex: 1;
-            position: relative;
-            left: 40px;
-        }
-
-        .nav-container__hamburger-btn:focus-visible {
-            @include focus-visible($primary-color, 3px);
-        }
-
-        .nav-container__hamburger-btn {
-            padding: 5px 8px;
-            font-size: 2.7rem;
-            border-radius: 10px;
-            width: fit-content;
-        }
+        @include flex(row, space-around, center, 40px);
+        padding: 32px 64px;
 
         .nav-container__actions {
+            display: flex;
             order: 3;
             @include flex-center;
             flex: 1;
-        }
-
-        .nav-container__links {
-            right: -100%;
-            position: fixed;
-            top: 0;
-            background-color: $primary-color;
-            width: 55%;
-            height: 100vh;
-            flex-direction: column;
-            @include flex-center;
-            align-items: flex-end;
-            transition: all 0.3s;
-            padding-right: 40px;
-
-            .nav-container__link {
-                color: $background-color;
-                font-size: 1.8rem;
-            }
-
-            .nav-container__link--active {
-                color: $text-500;
-            }
-
-            .nav-container__close-btn {
-                display: block;
-                padding: 0;
-                font-size: 2.7rem;
-                position: absolute;
-                top: 8%;
-            }
-
-            .nav-container__close-btn:focus-visible {
-                @include focus-visible($background-color, 5px);
-            }
-
-            .nav-container__link:focus-visible {
-            @include focus-visible($background-color);
-        }
-        }
-
-        .nav-container__links--open {
-            right: 0;
-        }
-    }
-}
-
-@media (max-width: map-get($breakpoints, sm)) {
-    .nav-container {
-        padding: 37px 15px;
-
-        .nav-container__actions {
-            display: none;
+            justify-content: flex-end;
         }
 
         .nav-container__logo {
-            order: 1;
-            justify-content: flex-start;
+            justify-content: center;
+            order: 2;
+            flex: 1;
         }
 
         .nav-container__hamburger {
-            order: 2;
-            display: flex;
-            justify-content: flex-end;
-            left: 0;
+            order: 1;
+            justify-content: flex-start;
+            flex: 1;
         }
 
+    }
+}
+
+
+/* Desktop */
+@media (min-width: map-get($breakpoints, lg)) {
+
+    .nav-container {
+        @include flex(row, space-around, center, 40px);
+        padding: 72px 32px;
+
+        .nav-container__logo {
+            order: initial;
+            flex: initial;
+        }
+
+        .nav-container__hamburger {
+            display: none;
+        }
+
+        .nav-container__actions {
+            order: initial;
+        }
+
+
         .nav-container__links {
-            z-index: 1000;
+            position: static;
+            width: auto;
+            height: auto;
+            background: none;
+            flex-direction: row;
+            padding: 0;
+            display: flex;
+            gap: 70px;
+
+            .nav-container__link {
+                color: $text-500;
+                font-size: 1.5rem;
+            }
+
+            .nav-container__link:focus-visible {
+                @include focus-visible($primary-color);
+            }
+
+            .nav-container__link:hover {
+                color: $text-700;
+            }
+
+            .nav-container__link--active {
+                color: $text-700;
+            }
 
             .nav-container__close-btn {
-                position: absolute;
-                top: 8%;
-                z-index: 1001;
+                display: none;
             }
+
         }
     }
 }
