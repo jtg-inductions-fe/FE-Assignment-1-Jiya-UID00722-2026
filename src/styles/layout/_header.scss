@@ -39,6 +39,13 @@
         .nav-container__links li>a:focus-visible {
             @include focus-visible($primary-color);
         }
+
+        .nav-container__close-btn {
+            padding: 0;
+            font-size: 2.7rem;
+            position: absolute;
+            top: 8%;
+        }
     }
 }
 
@@ -121,6 +128,16 @@
             display: flex;
             justify-content: flex-end;
             left: 0;
+        }
+
+        .nav-container__links {
+            z-index: 1000;
+
+            .nav-container__close-btn {
+                position: absolute;
+                top: 8%;
+                z-index: 1001;
+            }
         }
     }
 }

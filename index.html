@@ -23,7 +23,12 @@
         </div>
         <nav aria-label="Main Navigation">
             <ul class="nav-container__links" id="navLinks">
-                <li><a class="nav-container__link nav-container__link--active" href="#" aria-current="page">Home</a></li>
+                <button type="button" class="nav-container__close-btn btn btn--primary" id="closeBtn"
+                    aria-label="Close navigation menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <li><a class="nav-container__link nav-container__link--active" href="#" aria-current="page">Home</a>
+                </li>
                 <li><a class="nav-container__link" href="#">Discover</a></li>
                 <li><a class="nav-container__link" href="#">Special Deals</a></li>
                 <li><a class="nav-container__link" href="#">Contact</a></li>
@@ -34,7 +39,8 @@
             <button class="btn btn--primary">Sign Up</button>
         </div>
         <div class="nav-container__hamburger">
-            <button type="button" class="btn btn--primary nav-container__hamburger-btn" id="hamburgerBtn" aria-controls="sidebar" aria-expanded="false">
+            <button type="button" class="btn btn--primary nav-container__hamburger-btn" id="hamburgerBtn"
+                aria-controls="sidebar" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
         </div>

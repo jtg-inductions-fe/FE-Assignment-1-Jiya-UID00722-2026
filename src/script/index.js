@@ -1,6 +1,7 @@
 const hamburger = document.getElementById('hamburgerBtn');
 const navLinksList = document.getElementById('navLinks');
 const menuLinks = navLinksList.querySelectorAll('a');
+const closeBtn = document.getElementById("closeBtn");
 
 /**
  * @description Toggles the navigation menu open and closed, and manages focus for accessibility
@@ -19,6 +20,8 @@ function toggleMenu() {
 }
 
 hamburger.addEventListener('click', toggleMenu);
+
+closeBtn.addEventListener("click", toggleMenu);
 
 /**
  * @description Closes the menu when Escape key is pressed, and returns focus to hamburger button
