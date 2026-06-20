@@ -35,9 +35,9 @@
         "vite-plugin-image-optimizer": "1.1.8"
     },
     "lint-staged": {
-        "*.js": [
+        "**/*.js": [
             "eslint --max-warnings=0"
         ],
-        "*.{html,scss,json}": "prettier --check"
+        "**/*.{html,scss,json}": "prettier --check"
     }
 }
