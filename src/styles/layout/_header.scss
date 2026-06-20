@@ -1,0 +1,127 @@
+@use '../abstracts/' as *;
+
+.nav {
+    @include flex(row, space-around, center, 40px);
+    padding: 72px 32px;
+}
+
+.nav__links {
+    @include list-style-none;
+    display: flex;
+    gap: 70px;
+
+    li>a {
+        @include link-style-none;
+        color: $text-500;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    li>a:hover {
+        color: $text-700;
+    }
+
+    .active {
+        color: $text-700;
+    }
+}
+
+.nav__logo > a:focus-visible {
+    @include focus-visible($primary-color);
+}
+
+.nav__links li>a:focus-visible {
+    @include focus-visible($primary-color);
+}
+
+.nav__actions > button:focus-visible {
+    @include focus-visible($primary-color, 3px);
+}
+
+.nav__hamburger {
+    display: none;
+}
+
+@media (max-width: map-get($breakpoints, lg)) {
+    .nav {
+        padding: 32px 26px;
+        gap: 0;
+
+        .nav__logo {
+            order: 2;
+            @include flex-center;
+            flex: 1;
+        }
+
+        .nav__hamburger {
+            display: block;
+            order: 1;
+            flex: 1;
+            position: relative;
+            left: 40px;
+        }
+
+        .nav__hamburger-btn {
+            padding: 5px 8px;
+            font-size: 2.7rem;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .nav__actions {
+            order: 3;
+            @include flex-center;
+            flex: 1;
+        }
+
+        .nav__links {
+            right: -100%;
+            position: fixed;
+            top: 0;
+            background-color: $primary-color;
+            width: 55%;
+            height: 100vh;
+            flex-direction: column;
+            @include flex-center;
+            align-items: flex-end;
+            transition: all 0.3s;
+            padding-right: 40px;
+        }
+
+        .nav__links li>a {
+            color: $background-color;
+            font-size: 1.8rem;
+        }
+
+        .nav__links li>a.active {
+            color: $text-500;
+            ;
+        }
+
+        .nav__links-list--open {
+            right: 0;
+        }
+    }
+}
+
+@media (max-width: map-get($breakpoints, sm)) {
+    .nav {
+        padding: 37px 15px;
+
+        .nav__actions {
+            display: none;
+        }
+
+        .nav__logo {
+            order: 1;
+            justify-content: flex-start;
+        }
+
+        .nav__hamburger {
+            order: 2;
+            display: flex;
+            justify-content: flex-end;
+            left: 0;
+        }
+    }
+}
