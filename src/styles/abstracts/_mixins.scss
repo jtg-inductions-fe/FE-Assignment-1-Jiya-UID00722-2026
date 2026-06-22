@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 @use './variables' as *;
 @mixin text($size, $weight: 400, $line-height: 1.5,$family: $font-primary) {
-=======
-@mixin text($size, $weight: 400, $line-height: 1.5, $family: $font-primary) {
->>>>>>> dd07202 ([JG_A1_NAV]: Enhance default UI of borders while navigating)
     font-size: $size;
     font-weight: $weight;
     line-height: $line-height;
