@@ -75,16 +75,13 @@
         0px 126px 35px 0px #00000000;
 }
 
-@mixin container {
-    margin: auto;
-
-    @include media-up(sm) {
-        max-width: 896px;
-    }
-
-    @include media-up(lg) {
-        max-width: min(1250px, calc(100% - 48px));
-    }
+@mixin shadow-2xl {
+    box-shadow: 0px 0px 0px 0px #00000012,
+        0px 34px 75px 0px #00000012,
+        0px 137px 137px 0px #0000000F,
+        0px 308px 185px 0px #0000000A,
+        0px 548px 219px 0px #00000003,
+        0px 856px 240px 0px #00000000;
 }
 
 @mixin link-style-none {
