@@ -4,13 +4,14 @@
     display: flex;
     flex-direction: column-reverse;
     padding: 28px 15px;
+    @include container;
 
     &__content {
         @include flex-center;
         flex-direction: column;
         position: relative;
         top: -125px;
-        padding: 40px 8px;
+        padding: 40px 8px 0px 8px;
         gap: 20px;
     }
 
@@ -25,9 +26,13 @@
 
     &__badge-text {
         $color: $text-500;
-        font-size: 1.65rem;
+        font-size: 1.4rem;
         text-align: center;
         margin-top: 5px;
+    }
+
+    &__badge-icon {
+        font-size: 2rem;
     }
 
     &__title {
@@ -80,8 +85,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-
     }
 
     &__bg {
@@ -153,5 +156,116 @@
         border-radius: 50px;
         background-color: $background-color;
         font-size: 1rem;
+    }
+
+    &__text-break {
+        display: inline;
+    }
+
+    &__arrows{
+        display: none;
+    }
+}
+
+// Tablet
+
+@include media-up(sm) {
+    .hero {
+        padding: 64px 64px 0px 64px;
+        position: relative;
+
+        &__gallery {
+            top: -218px;
+        }
+
+        &__icon {
+            width: 64px;
+            height: 64px;
+            font-size: 2.5rem;
+        }
+
+        &__icon--telegram {
+            left: -42px;
+        }
+
+        &__tag {
+            right: -13%;
+            bottom: 26%;
+            font-size: 1.4rem;
+            padding: 16px 32px;
+            gap: 8px;
+        }
+
+        &__tag-icon {
+            font-size: 2rem;
+        }
+
+        &__content {
+            top: -188px;
+            gap: 25px;
+        }
+
+        &__title {
+            font-size: 5.8rem;
+            margin-top: 28px;
+        }
+
+        &__description {
+            font-size: 2rem;
+        }
+
+        &__text-break {
+            display: block;
+        }
+        &__actions{
+            flex-direction: row;
+            gap:16px;   
+        }
+        &__action{
+            width: auto;
+            padding: 16px 32px;
+        }
+        &__arrows{
+            display: block;
+            position: absolute;
+            bottom: 9%;
+            left: -3%;
+        }
+        &__arrows-img{
+            width: 65px;
+            height: auto;
+        }
+    }
+}
+
+// Desktop
+
+@include media-up(xxl){
+    .hero{
+        flex-direction: row;
+        padding: 24px 0 0 0;
+        &__content{
+            flex:6;
+            align-items: start;
+            margin-top: 100px;
+            gap:40px;
+        }
+        &__media{
+            flex:11;
+        }
+        &__title{
+            text-align: left;
+            font-size: 7rem;
+        }
+        &__description{
+            text-align: left;
+        }
+        &__actions{
+            justify-content: flex-start;
+        }
+        &__arrows{
+            bottom: 8%;
+            left: -7%;
+        }
     }
 }
