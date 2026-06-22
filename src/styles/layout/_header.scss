@@ -136,7 +136,8 @@
 
     .nav-container {
         @include flex(row, space-around, center, 40px);
-        padding: 72px 32px;
+        padding: 72px 0;
+        @include container;
 
         .nav-container__logo {
             order: initial;
@@ -160,7 +161,6 @@
             flex-direction: row;
             padding: 0;
             display: flex;
-            gap: 70px;
 
             .nav-container__link {
                 color: $text-500;
