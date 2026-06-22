@@ -71,3 +71,8 @@
         0px 81px 32px 0px #00000003,
         0px 126px 35px 0px #00000000;
 }
+
+@mixin container{
+    max-width: 1250px;
+    margin: auto;
+}
