@@ -24,6 +24,10 @@
         font-size: 1.3rem;
     }
 
+    &__badge:hover {
+        color: $secondary-color;
+    }
+
     &__badge-text {
         $color: $text-500;
         font-size: 1.4rem;
@@ -162,9 +166,27 @@
         display: inline;
     }
 
-    &__arrows{
+    &__arrows {
         display: none;
     }
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    top: -150px;
+    left: -150px;
+
+    width: 500px;
+    height: 500px;
+
+    background: radial-gradient(circle,
+            rgba(255, 87, 34, 0.5),
+            transparent 80%);
+
+    filter: blur(150px);
+    pointer-events: none;
 }
 
 // Tablet
@@ -217,53 +239,81 @@
         &__text-break {
             display: block;
         }
-        &__actions{
+
+        &__actions {
             flex-direction: row;
-            gap:16px;   
+            gap: 16px;
         }
-        &__action{
+
+        &__action {
             width: auto;
             padding: 16px 32px;
         }
-        &__arrows{
+
+        &__arrows {
             display: block;
             position: absolute;
             bottom: 9%;
             left: -3%;
         }
-        &__arrows-img{
+
+        &__arrows-img {
             width: 65px;
             height: auto;
         }
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+
+        top: -500px;
+        left: -500px;
+
+        width: 1000px;
+        height: 1000px;
+
+        background: radial-gradient(circle,
+                rgba(255, 87, 34, 0.5),
+                transparent 80%);
+
+        filter: blur(150px);
+        pointer-events: none;
     }
 }
 
 // Desktop
 
-@include media-up(xxl){
-    .hero{
+@include media-up(xxl) {
+    .hero {
         flex-direction: row;
         padding: 24px 0 0 0;
-        &__content{
-            flex:6;
+
+        &__content {
+            flex: 6;
             align-items: start;
             margin-top: 100px;
-            gap:40px;
+            gap: 40px;
         }
-        &__media{
-            flex:11;
+
+        &__media {
+            flex: 11;
         }
-        &__title{
+
+        &__title {
             text-align: left;
             font-size: 7rem;
         }
-        &__description{
+
+        &__description {
             text-align: left;
         }
-        &__actions{
+
+        &__actions {
             justify-content: flex-start;
         }
-        &__arrows{
+
+        &__arrows {
             bottom: 8%;
             left: -7%;
         }
