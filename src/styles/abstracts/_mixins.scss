@@ -73,7 +73,14 @@
         0px 126px 35px 0px #00000000;
 }
 
-@mixin container{
-    max-width: 1250px;
+@mixin container {
     margin: auto;
+
+    @include media-up(sm) {
+        max-width: 896px;
+    }
+
+    @include media-up(lg) {
+        max-width: 1250px;
+    }
 }
