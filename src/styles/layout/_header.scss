@@ -18,6 +18,10 @@
         display: none;
     }
 
+    &__actions-btn:focus-visible {
+        @include focus-visible($primary-color, 3px);
+    }
+
     &__hamburger {
         @include flex($justify: flex-end);
         order: 2;
@@ -84,11 +88,7 @@
         right: 0;
     }
 
-    &__logo>a:focus-visible {
-        @include focus-visible($primary-color, 3px);
-    }
-
-    &__actions>button:focus-visible {
+    &__logo-link:focus-visible {
         @include focus-visible($primary-color, 3px);
     }
 }
