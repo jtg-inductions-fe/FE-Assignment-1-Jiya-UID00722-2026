@@ -46,6 +46,7 @@
         @include flex($direction: column, $align: flex-end);
         gap: 10rem;
         padding: 6rem 4rem 0 0;
+        z-index: $z-index-1000;
     }
 
     &__links {
