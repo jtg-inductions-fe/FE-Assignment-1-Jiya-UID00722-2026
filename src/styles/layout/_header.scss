@@ -99,13 +99,17 @@
 /* Tablet */
 @media (min-width: map-get($breakpoints, sm)) {
 
-    nav {
+    .nav-container__menu {
         position: absolute
     }
 
     .nav-container {
         @include flex(row, space-around, center, 40px);
         padding: 32px 64px;
+
+        &__menu{
+            position: absolute
+        }
 
         .nav-container__actions {
             display: flex;
