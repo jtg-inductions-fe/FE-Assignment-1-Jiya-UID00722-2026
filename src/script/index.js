@@ -1,5 +1,5 @@
 const hamburger = document.getElementById('hamburgerBtn');
-const navLinksList = document.getElementById('navLinks');
+const navMenu = document.getElementById('navMenu');
 const closeBtn = document.getElementById("closeBtn");
 
 /**
@@ -8,7 +8,7 @@ const closeBtn = document.getElementById("closeBtn");
  */
 
 function toggleMenu() {
-    const isOpen = navLinksList.classList.toggle('nav-container__links--open');
+    const isOpen = navMenu.classList.toggle('nav-container__menu--open');
 
     hamburger.setAttribute('aria-expanded', isOpen);
 
@@ -32,7 +32,7 @@ closeBtn.addEventListener("click", toggleMenu);
  * @returns {void}
  */
 
-navLinksList.addEventListener('keydown', (e) => {
+navMenu.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         e.preventDefault();
         toggleMenu();

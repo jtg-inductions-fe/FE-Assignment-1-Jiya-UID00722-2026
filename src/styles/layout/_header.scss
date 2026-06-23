@@ -33,19 +33,25 @@
         @include focus-visible($primary-color, 3px);
     }
 
-    &__links {
+    &__menu {
         position: fixed;
         right: -100%;
         top: 0;
+        background-color: $primary-color;
         width: 55%;
         height: 100vh;
-        background-color: $primary-color;
+        transition: all 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 100px;
+        padding: 60px 40px 0 0;
+    }
+
+    &__links {
         flex-direction: column;
         @include flex-center;
         align-items: flex-end;
-        padding-right: 40px;
-        transition: all 0.3s;
-        z-index: 1000;
         @include list-style-none;
         gap: 70px;
     }
@@ -73,15 +79,13 @@
         display: block;
         padding: 0;
         font-size: 2.7rem;
-        position: absolute;
-        top: 8%;
     }
 
     &__close-btn:focus-visible {
         @include focus-visible($background-color, 5px);
     }
 
-    &__links--open {
+    &__menu--open {
         right: 0;
     }
 
@@ -102,10 +106,6 @@
     .nav-container {
         @include flex(row, space-around, center, 40px);
         padding: 32px 64px;
-
-        &__menu {
-            position: absolute
-        }
 
         &__actions {
             display: flex;
@@ -135,7 +135,7 @@
 @media (min-width: map-get($breakpoints, lg)) {
 
     .nav-container {
-        @include flex(row, space-around, center, 40px);
+        @include flex(row, space-between, center, 40px);
         padding: 72px 0;
         @include container;
 
@@ -150,16 +150,19 @@
 
         &__actions {
             order: initial;
+            flex: none;
         }
 
-        &__links {
+        &__menu {
             position: static;
             width: auto;
             height: auto;
             background: none;
-            flex-direction: row;
             padding: 0;
-            display: flex;
+        }
+
+        &__links {
+            flex-direction: row;
         }
 
         &__link {
