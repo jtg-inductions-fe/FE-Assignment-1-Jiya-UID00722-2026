@@ -1,26 +1,22 @@
 @use '../abstracts/' as *;
 
 .hero {
-    display: flex;
-    flex-direction: column-reverse;
+    @include flex($direction: column-reverse);
     padding: 28px 15px;
     @include container;
 
     &__content {
-        @include flex-center;
-        flex-direction: column;
+        @include flex($direction: column, $gap: 20px);
         position: relative;
         top: -125px;
         padding: 40px 8px 0px 8px;
-        gap: 20px;
     }
 
     &__badge {
         @include shadow-2xl;
         color: $secondary-color;
         font-weight: 700;
-        @include flex-center;
-        gap: 16px;
+        @include flex(row, center, center, 16px);
         font-size: 1.3rem;
     }
 
@@ -57,9 +53,7 @@
     }
 
     &__actions {
-        @include flex-center;
-        flex-direction: column;
-        gap: 28px;
+        @include flex($direction: column, $gap: 28px);
         width: 100%;
         margin-top: 13px;
     }
@@ -68,8 +62,7 @@
         width: 100%;
         padding: 24px 32px;
         font-size: 1.4rem;
-        @include flex-center;
-        gap: 10px;
+        @include flex(row, center, center, 10px);
     }
 
     &__action--first {
@@ -86,9 +79,7 @@
     }
 
     &__media {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex($direction: column, $align: center);
     }
 
     &__bg {
@@ -109,14 +100,11 @@
 
     &__card {
         flex: 1;
-        display: flex;
-        align-items: center;
+        @include flex-center;
     }
 
     &__card--left {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+        @include flex($direction: column, $gap: 16px);
     }
 
     &__image {
