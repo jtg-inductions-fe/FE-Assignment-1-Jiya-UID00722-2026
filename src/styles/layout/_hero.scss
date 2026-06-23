@@ -6,7 +6,7 @@
     @include container;
 
     &__content {
-        @include flex($direction: column, $gap: 20px);
+        @include flex(column,center,center,20px);
         position: relative;
         top: -125px;
         padding: 40px 8px 0px 8px;
