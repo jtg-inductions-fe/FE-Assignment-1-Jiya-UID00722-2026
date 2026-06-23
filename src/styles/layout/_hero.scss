@@ -6,7 +6,7 @@
     @include container;
 
     &__content {
-        @include flex(column,center,center,20px);
+        @include flex(column, center, center, 20px);
         position: relative;
         top: -125px;
         padding: 4rem 0.8rem 0 0.8rem;
@@ -18,10 +18,10 @@
         font-weight: 700;
         @include flex(row, center, center, 1.6rem);
         font-size: 1.3rem;
-    }
 
-    &__badge:hover {
-        color: $secondary-color;
+        &:hover {
+            color: $secondary-color;
+        }
     }
 
     &__badge-text {
@@ -40,10 +40,10 @@
         font-size: 3.8rem;
         font-weight: 700;
         text-align: center;
-    }
 
-    &__title--highlight {
-        color: $secondary-color;
+        &--highlight {
+            color: $secondary-color;
+        }
     }
 
     &__description {
@@ -63,14 +63,14 @@
         padding: 2.4rem 3.2rem;
         font-size: 1.4rem;
         @include flex(row, center, center, 1rem);
-    }
 
-    &__action--first {
-        @include shadow-xl;
-    }
+        &--first {
+            @include shadow-xl;
+        }
 
-    &__action--second {
-        border: 1px solid $light-background-color;
+        &--second {
+            border: 1px solid $light-background-color;
+        }
     }
 
     &__play-icon {
@@ -101,10 +101,10 @@
     &__card {
         flex: 1;
         @include flex-center;
-    }
 
-    &__card--left {
-        @include flex($direction: column, $gap: 1.6rem);
+        &--left {
+            @include flex($direction: column, $gap: 1.6rem);
+        }
     }
 
     &__image {
@@ -122,18 +122,18 @@
         height: 3.6rem;
         @include flex-center;
         color: $background-color;
-    }
 
-    &__icon--telegram {
-        background-color: $secondary-color;
-        top: 40%;
-        left: -1.6rem;
-    }
+        &--telegram {
+            background-color: $secondary-color;
+            top: 40%;
+            left: -1.6rem;
+        }
 
-    &__icon--contact {
-        background-color: $orange-color;
-        bottom: 0;
-        left: 65%;
+        &--contact {
+            background-color: $orange-color;
+            bottom: 0;
+            left: 65%;
+        }
     }
 
     &__tag {
@@ -192,10 +192,10 @@
             width: 6.4rem;
             height: 6.4rem;
             font-size: 2.5rem;
-        }
 
-        &__icon--telegram {
-            left: -4.2rem;
+            &--telegram {
+                left: -4.2rem;
+            }
         }
 
         &__tag {
