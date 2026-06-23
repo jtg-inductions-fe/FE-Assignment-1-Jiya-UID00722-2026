@@ -2,21 +2,21 @@
 
 .hero {
     @include flex($direction: column-reverse);
-    padding: 28px 15px;
+    padding: 2.8rem 1.5rem;
     @include container;
 
     &__content {
         @include flex(column,center,center,20px);
         position: relative;
         top: -125px;
-        padding: 40px 8px 0px 8px;
+        padding: 4rem 0.8rem 0 0.8rem;
     }
 
     &__badge {
         @include shadow-2xl;
         color: $secondary-color;
         font-weight: 700;
-        @include flex(row, center, center, 16px);
+        @include flex(row, center, center, 1.6rem);
         font-size: 1.3rem;
     }
 
@@ -28,7 +28,7 @@
         $color: $text-500;
         font-size: 1.4rem;
         text-align: center;
-        margin-top: 5px;
+        margin-top: 0.5rem;
     }
 
     &__badge-icon {
@@ -49,20 +49,20 @@
     &__description {
         font-size: 1.65rem;
         text-align: center;
-        margin-top: 5px;
+        margin-top: 0.5rem;
     }
 
     &__actions {
-        @include flex($direction: column, $gap: 28px);
+        @include flex($direction: column, $gap: 2.8rem);
         width: 100%;
-        margin-top: 13px;
+        margin-top: 1.3rem;
     }
 
     &__action {
         width: 100%;
-        padding: 24px 32px;
+        padding: 2.4rem 3.2rem;
         font-size: 1.4rem;
-        @include flex(row, center, center, 10px);
+        @include flex(row, center, center, 1rem);
     }
 
     &__action--first {
@@ -93,9 +93,9 @@
     &__gallery {
         display: flex;
         width: 75%;
-        gap: 16px;
+        gap: 1.6rem;
         position: relative;
-        top: -118px;
+        top: -11.8rem;
     }
 
     &__card {
@@ -104,7 +104,7 @@
     }
 
     &__card--left {
-        @include flex($direction: column, $gap: 16px);
+        @include flex($direction: column, $gap: 1.6rem);
     }
 
     &__image {
@@ -118,8 +118,8 @@
         position: absolute;
         @include shadow-sm;
         font-size: 1.5rem;
-        width: 36px;
-        height: 36px;
+        width: 3.6rem;
+        height: 3.6rem;
         @include flex-center;
         color: $background-color;
     }
@@ -127,7 +127,7 @@
     &__icon--telegram {
         background-color: $secondary-color;
         top: 40%;
-        left: -16px;
+        left: -1.6rem;
     }
 
     &__icon--contact {
@@ -140,9 +140,9 @@
         position: absolute;
         bottom: 27%;
         right: -14%;
-        padding: 8px 16px;
+        padding: 0.8rem 1.6rem;
         @include flex-center;
-        gap: 4px;
+        gap: 0.4rem;
         font-weight: 700;
         @include shadow-sm;
         border-radius: 50px;
@@ -181,28 +181,28 @@
 
 @include media-up(sm) {
     .hero {
-        padding: 64px 64px 0px 64px;
+        padding: 6.4rem 6.4rem 0 6.4rem;
         position: relative;
 
         &__gallery {
-            top: -218px;
+            top: -21.8rem;
         }
 
         &__icon {
-            width: 64px;
-            height: 64px;
+            width: 6.4rem;
+            height: 6.4rem;
             font-size: 2.5rem;
         }
 
         &__icon--telegram {
-            left: -42px;
+            left: -4.2rem;
         }
 
         &__tag {
             right: -13%;
             bottom: 26%;
             font-size: 1.4rem;
-            padding: 16px 32px;
+            padding: 1.6rem 3.2rem;
             gap: 8px;
         }
 
@@ -212,13 +212,13 @@
         }
 
         &__content {
-            top: -188px;
-            gap: 25px;
+            top: -18.8rem;
+            gap: 2.5rem;
         }
 
         &__title {
             font-size: 5.8rem;
-            margin-top: 28px;
+            margin-top: 2.8rem;
         }
 
         &__description {
@@ -231,12 +231,13 @@
 
         &__actions {
             flex-direction: row;
-            gap: 16px;
+            justify-content: center;
+            gap: 1.6rem;
         }
 
         &__action {
             width: auto;
-            padding: 16px 32px;
+            padding: 1.6rem 3.2rem;
         }
 
         &__arrows {
@@ -276,13 +277,13 @@
 @include media-up(xxl) {
     .hero {
         flex-direction: row;
-        padding: 24px 0 0 0;
+        padding: 2.4rem 0 0 0;
 
         &__content {
             flex: 6;
             align-items: flex-start;
-            margin-top: 100px;
-            gap: 40px;
+            margin-top: 10rem;
+            gap: 4rem;
         }
 
         &__media {
