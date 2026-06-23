@@ -157,24 +157,24 @@
     &__arrows {
         display: none;
     }
-}
 
-.hero::before {
-    content: "";
-    position: absolute;
+    &::before {
+        content: "";
+        position: absolute;
 
-    top: -150px;
-    left: -150px;
+        top: -150px;
+        left: -150px;
 
-    width: 500px;
-    height: 500px;
+        width: 500px;
+        height: 500px;
 
-    background: radial-gradient(circle,
-            rgba(255, 87, 34, 0.5),
-            transparent 80%);
+        background: radial-gradient(circle,
+                rgba(255, 87, 34, 0.5),
+                transparent 80%);
 
-    filter: blur(150px);
-    pointer-events: none;
+        filter: blur(150px);
+        pointer-events: none;
+    }
 }
 
 // Tablet
@@ -250,24 +250,24 @@
             width: 65px;
             height: auto;
         }
-    }
 
-    .hero::before {
-        content: "";
-        position: absolute;
+        &::before {
+            content: "";
+            position: absolute;
 
-        top: -500px;
-        left: -500px;
+            top: -500px;
+            left: -500px;
 
-        width: 1000px;
-        height: 1000px;
+            width: 1000px;
+            height: 1000px;
 
-        background: radial-gradient(circle,
-                rgba(255, 87, 34, 0.5),
-                transparent 80%);
+            background: radial-gradient(circle,
+                    rgba(255, 87, 34, 0.5),
+                    transparent 80%);
 
-        filter: blur(150px);
-        pointer-events: none;
+            filter: blur(150px);
+            pointer-events: none;
+        }
     }
 }
 
