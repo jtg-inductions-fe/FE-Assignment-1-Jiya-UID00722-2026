@@ -6,9 +6,12 @@
 
     &__logo {
         order: 1;
-        @include flex-center;
-        justify-content: flex-start;
+        @include flex;
         flex: 1;
+    }
+
+    &__logo-link {
+        @include flex-center;
     }
 
     &__actions {
@@ -16,9 +19,8 @@
     }
 
     &__hamburger {
-        display: flex;
+        @include flex($justify: flex-end);
         order: 2;
-        justify-content: flex-end;
         flex: 1;
     }
 
@@ -41,17 +43,13 @@
         width: 55%;
         height: 100vh;
         transition: all 0.3s;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        @include flex($direction: column, $align: flex-end);
         gap: 100px;
         padding: 60px 40px 0 0;
     }
 
     &__links {
-        flex-direction: column;
-        @include flex-center;
-        align-items: flex-end;
+        @include flex(column, center, flex-end);
         @include list-style-none;
         gap: 70px;
     }
@@ -108,11 +106,9 @@
         padding: 32px 64px;
 
         &__actions {
-            display: flex;
             order: 3;
-            @include flex-center;
+            @include flex;
             flex: 1;
-            justify-content: flex-end;
         }
 
         &__logo {
