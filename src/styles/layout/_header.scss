@@ -59,7 +59,7 @@
         @include link-style-none;
         color: $background-color;
         font-size: 1.8rem;
-        font-weight: 700;
+        font-weight: $font-weight-700;
     }
 
     &__link:hover {
