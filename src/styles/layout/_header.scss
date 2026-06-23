@@ -2,7 +2,7 @@
 
 .nav-container {
     @include flex(row, space-between, center, 0);
-    padding: 37px 15px;
+    padding: 3.7rem 1.5rem;
 
     &__logo {
         order: 1;
@@ -25,7 +25,7 @@
     }
 
     &__hamburger-btn {
-        padding: 5px 8px;
+        padding: 0.5rem 0.8rem;
         font-size: 2.7rem;
         border-radius: 10px;
         width: fit-content;
@@ -44,14 +44,14 @@
         height: 100vh;
         transition: all 0.3s;
         @include flex($direction: column, $align: flex-end);
-        gap: 100px;
-        padding: 60px 40px 0 0;
+        gap: 10rem;
+        padding: 6rem 4rem 0 0;
     }
 
     &__links {
         @include flex(column, center, flex-end);
         @include list-style-none;
-        gap: 70px;
+        gap: 7rem;
     }
 
     &__link {
@@ -102,8 +102,8 @@
 @media (min-width: map-get($breakpoints, sm)) {
 
     .nav-container {
-        @include flex(row, space-around, center, 40px);
-        padding: 32px 64px;
+        @include flex(row, space-around, center, 4rem);
+        padding: 3.2rem 6.4rem;
 
         &__actions {
             order: 3;
@@ -131,8 +131,8 @@
 @media (min-width: map-get($breakpoints, lg)) {
 
     .nav-container {
-        @include flex(row, space-between, center, 40px);
-        padding: 72px 0;
+        @include flex(row, space-between, center);
+        padding: 7.2rem 0;
         @include container;
 
         &__logo {
