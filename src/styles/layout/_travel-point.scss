@@ -25,22 +25,6 @@
         @include flex(column, center, center, 1.4rem);
     }
 
-    &__heading {
-        font-weight: $font-weight-700;
-        text-align: center;
-
-        &--primary {
-            color: $secondary-color;
-            font-size: 1.5rem;
-            letter-spacing: 20%;
-        }
-
-        &--secondary {
-            font-size: 3.2rem;
-            line-height: 120%;
-        }
-    }
-
     &__description {
         font-size: 1.6rem;
         line-height: 160%;
@@ -95,16 +79,6 @@
             gap: 4.1rem;
         }
 
-        &__heading {
-            &--primary {
-                font-size: 2.3rem;
-            }
-
-            &--secondary {
-                font-size: 4rem;
-            }
-        }
-
         &__description {
             font-size: 1.8rem;
         }
@@ -155,10 +129,6 @@
 
         &__heading {
             text-align: left;
-
-            &--secondary {
-                font-size: 4.4rem;
-            }
         }
 
         &__description {
