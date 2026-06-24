@@ -3,7 +3,7 @@
 .travel {
     @include container;
     padding: 3rem 0;
-    @include flex($direction:column);
+    @include flex($direction: column);
 
     &--left {
         flex: 1;
@@ -16,8 +16,12 @@
 
     &--right {
         flex: 1;
-        @include flex(column,center,center,1.4rem);
+        @include flex(column, center, center, 1rem);
+    }
+
+    &__content {
         padding: 2.3rem;
+        @include flex(column, center, center, 1.4rem);
     }
 
     &__heading {
@@ -48,7 +52,6 @@
         @include grid(1);
         width: 100%;
         max-width: 34.8rem;
-        margin-top: 1.8rem;
         row-gap: 1.8rem;
     }
 
@@ -57,7 +60,7 @@
         border-radius: 32px;
         width: 100%;
         padding: 2.8rem 3.2rem;
-        @include flex(column, center, center,1rem);
+        @include flex(column, center, center, 1rem);
 
         &__count {
             color: $orange-color;
@@ -68,6 +71,44 @@
         &__text {
             font-size: 1.8rem;
             color: $text-800;
+        }
+    }
+}
+
+@include media-up(sm) {
+    .travel {
+        padding: 6.4rem 0 1.5rem 0;
+        gap: 3.5rem;
+
+        &__img {
+            width: 100vw;
+            max-width: none;
+            margin-left: calc(50% - 50vw);
+        }
+
+        &--right {
+            gap: 4.1rem;
+        }
+
+        &__heading {
+            &--primary {
+                font-size: 2.3rem;
+            }
+
+            &--secondary {
+                font-size: 4rem;
+            }
+        }
+
+        &__description {
+            font-size: 1.8rem;
+        }
+
+        &__cards {
+            @include grid(2);
+            max-width: none;
+            column-gap: 3rem;
+            row-gap: 3.4rem;
         }
     }
 }
