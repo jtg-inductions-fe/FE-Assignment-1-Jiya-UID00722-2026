@@ -46,17 +46,17 @@
         width: 100%;
         padding: 2.8rem 3.2rem;
         @include flex(column, center, center, 1rem);
+    }
 
-        &__count {
-            color: $orange-color;
-            font-size: 3.5rem;
-            font-weight: $font-weight-700;
-        }
+    &__card-count {
+        color: $orange-color;
+        font-size: 3.5rem;
+        font-weight: $font-weight-700;
+    }
 
-        &__text {
-            font-size: 1.8rem;
-            color: $text-800;
-        }
+    &__card-text {
+        font-size: 1.8rem;
+        color: $text-800;
     }
 
     &__ticket-icon {
