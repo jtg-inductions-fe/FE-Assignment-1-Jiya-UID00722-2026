@@ -1,0 +1,73 @@
+@use '../abstracts/' as *;
+
+.travel {
+    @include container;
+    padding: 3rem 0;
+    @include flex($direction:column);
+
+    &--left {
+        flex: 1;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+
+    &--right {
+        flex: 1;
+        @include flex(column,center,center,1.4rem);
+        padding: 2.3rem;
+    }
+
+    &__heading {
+        font-weight: $font-weight-700;
+        text-align: center;
+
+        &--primary {
+            color: $secondary-color;
+            font-size: 1.5rem;
+            letter-spacing: 20%;
+        }
+
+        &--secondary {
+            font-size: 3.2rem;
+            line-height: 120%;
+        }
+    }
+
+    &__description {
+        font-size: 1.6rem;
+        line-height: 160%;
+        text-align: center;
+        margin-top: 1.6rem;
+        color: $text-500;
+    }
+
+    &__cards {
+        @include grid(1);
+        width: 100%;
+        max-width: 34.8rem;
+        margin-top: 1.8rem;
+        row-gap: 1.8rem;
+    }
+
+    &__card {
+        border: 1px solid $text-400;
+        border-radius: 32px;
+        width: 100%;
+        padding: 2.8rem 3.2rem;
+        @include flex(column, center, center,1rem);
+
+        &__count {
+            color: $orange-color;
+            font-size: 3.5rem;
+            font-weight: $font-weight-700;
+        }
+
+        &__text {
+            font-size: 1.8rem;
+            color: $text-800;
+        }
+    }
+}
