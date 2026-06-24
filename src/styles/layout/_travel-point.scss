@@ -4,6 +4,7 @@
     @include container;
     padding: 3rem 0;
     @include flex($direction: column);
+    position: relative;
 
     &--left {
         flex: 1;
@@ -114,6 +115,20 @@
             column-gap: 3rem;
             row-gap: 3.4rem;
         }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -250px;
+            right: -350px;
+            width: 500px;
+            height: 500px;
+            background: $yellow-color;
+            opacity: 50%;
+            filter: blur(250px);
+            pointer-events: none;
+            z-index: $z-index-m1;
+        }
     }
 }
 
@@ -155,11 +170,11 @@
             margin-left: calc(625px - 50vw);
         }
 
-        &__cards{
+        &__cards {
             position: relative;
         }
 
-        &__card{
+        &__card {
             padding: 3.2rem;
         }
 
@@ -168,6 +183,7 @@
             position: absolute;
             right: -70px;
             top: -48px;
+
             &__img {
                 max-width: 120px;
             }
