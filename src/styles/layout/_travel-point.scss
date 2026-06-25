@@ -153,11 +153,11 @@
             position: absolute;
             right: -70px;
             top: -48px;
+        }
 
-            &__img {
-                max-width: 120px;
-                border-radius: 50%;
-            }
+        &__ticket-icon-img {
+            max-width: 120px;
+            border-radius: 50%;
         }
     }
 }
