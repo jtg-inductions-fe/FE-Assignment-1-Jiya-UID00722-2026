@@ -104,6 +104,10 @@
         &--selected {
             background-color: $secondary-color;
         }
+
+        &:focus-visible{
+            @include focus-visible($primary-color, 2px);
+        }
     }
 }
 
