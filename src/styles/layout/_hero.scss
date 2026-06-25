@@ -173,6 +173,7 @@
 
         filter: blur(150px);
         pointer-events: none;
+        z-index: $z-index-m1;
     }
 }
 
