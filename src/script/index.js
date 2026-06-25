@@ -1,13 +1,14 @@
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css';
+import EmblaCarousel from 'embla-carousel'
 
- document.addEventListener( 'DOMContentLoaded', function() {
-    var splide = new Splide( '.splide',{
-        type:'loop',
-        // autoplay: true
-    } );
-    splide.mount();
-  } );
+const wrapperNode = document.querySelector('.embla')
+const viewportNode = wrapperNode.querySelector('.embla__viewport')
+const prevButtonNode = wrapperNode.querySelector('.embla__prev')
+const nextButtonNode = wrapperNode.querySelector('.embla__next')
+
+const emblaApi = EmblaCarousel(viewportNode, { loop: true })
+
+prevButtonNode.addEventListener('click', () => emblaApi.scrollPrev(), false)
+nextButtonNode.addEventListener('click', () => emblaApi.scrollNext(), false)
 
 const hamburger = document.getElementById('hamburgerBtn');
 const navMenu = document.getElementById('navMenu');

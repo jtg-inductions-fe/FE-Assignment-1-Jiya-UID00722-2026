@@ -1,17 +1,18 @@
 @use '../abstracts/' as *;
 
 .testimonials {
-    @include flex(column,center,center,3rem);
+    @include flex(column, center, center, 3rem);
     padding: 9.4rem 0;
 
-    &__headings{
-        @include flex(column,center,center,1.6rem);
+    &__headings {
+        @include flex(column, center, center, 1.6rem);
     }
 }
 
 .testimonial {
     &__card {
-        @include flex(column,center,center,6.6rem);
+        @include flex(column, center, center, 6.6rem);
+        padding: 3rem 0;
     }
 
     &__image {
@@ -40,17 +41,55 @@
         font-size: 2.5rem;
         margin-top: -3.2rem;
     }
-    &__text{
+
+    &__text {
         font-size: 1.8rem;
         text-align: center;
         color: $text-600;
     }
 }
 
-@include media-up(sm){
-    .testimonial{
-        &__stars {
-        font-size: 3.2rem;
+.embla {
+    width: 100%;
+    position: relative;
+
+    &__viewport {
+        overflow: hidden;
     }
+
+    &__container {
+        display: flex;
+        touch-action: pan-y pinch-zoom;
+    }
+
+    &__slide {
+        flex: 0 0 100%;
+        min-width: 0;
+    }
+
+    &__arrow {
+        width: 64px;
+        height: 64px;
+        @include flex-center;
+        position: absolute;
+        top: 12%;
+    }
+
+    &__prev {
+        left: 4%;
+    }
+
+    &__next {
+        right: 4%;
+    }
+}
+
+
+
+@include media-up(sm) {
+    .testimonial {
+        &__stars {
+            font-size: 3.2rem;
+        }
     }
 }

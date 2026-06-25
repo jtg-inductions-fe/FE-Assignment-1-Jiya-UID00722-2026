@@ -41,6 +41,6 @@
         "**/*.{html,scss,json}": "prettier --check"
     },
     "dependencies": {
-        "@splidejs/splide": "^4.1.4"
+        "embla-carousel": "^8.6.0"
     }
 }
