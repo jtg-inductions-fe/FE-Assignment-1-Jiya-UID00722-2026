@@ -18,8 +18,14 @@
         display: none;
     }
 
-    &__actions-btn:focus-visible {
-        @include focus-visible($primary-color, 3px);
+    &__actions-btn {
+        &--login:focus-visible {
+            @include focus-visible($primary-color, 0px);
+        }
+
+        &--signup:focus-visible {
+            @include focus-visible($primary-color, 2px);
+        }
     }
 
     &__hamburger {
