@@ -21,26 +21,22 @@
     &__img {
         display: block;
     }
-}
 
-@include media-up(sm) {
-    .partners {
-        top: -5.5rem;
-        gap: 2rem;
+    @include media-up(sm) {
+            top: -5.5rem;
+            gap: 2rem;
 
-        &__item {
-            zoom: 1;
-        }
+            &__item {
+                zoom: 1;
+            }
     }
-}
 
-@include media-up(lg) {
-    .partners {
-        top: -8rem;
-        justify-content: space-between;
+    @include media-up(lg) {
+            top: -8rem;
+            justify-content: space-between;
 
-        &__break {
-            display: none;
-        }
+            &__break {
+                display: none;
+            }
     }
 }
