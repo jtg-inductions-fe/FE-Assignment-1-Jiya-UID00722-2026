@@ -12,6 +12,14 @@
     &__headings {
         @include flex(column, center, center, 1.6rem);
     }
+
+    @include media-up(sm) {
+        padding: 1.2rem 0;
+    }
+
+    @include media-up(lg) {
+        padding: 9.7rem 0;
+    }
 }
 
 .testimonial {
@@ -52,6 +60,42 @@
         text-align: center;
         color: $text-600;
     }
+
+    @include media-up(sm) {
+        &__stars {
+            margin-top: -2.2rem;
+        }
+
+        &__card {
+            padding: 2.2rem 0;
+            gap: 5.6rem;
+        }
+
+        &__text {
+            font-size: 2.3rem;
+            max-width: 60%;
+            margin-top: 1rem;
+        }
+    }
+
+    @include media-up(lg) {
+        &__stars {
+            margin-top: -2.7rem;
+            font-size: 2.6rem;
+            gap: 1.8rem;
+        }
+
+        &__card {
+            padding: 2.7rem 0;
+            gap: 6.8rem;
+        }
+
+        &__text {
+            margin-top: 0;
+            max-width: 54%;
+        }
+    }
+
 }
 
 .embla {
@@ -105,35 +149,13 @@
             background-color: $secondary-color;
         }
 
-        &:focus-visible{
+        &:focus-visible {
             @include focus-visible($primary-color, 2px);
         }
     }
-}
 
-@include media-up(sm) {
-    .testimonials {
-        padding: 1.2rem 0;
-    }
+    @include media-up(sm) {
 
-    .testimonial {
-        &__stars {
-            margin-top: -2.2rem;
-        }
-
-        &__card {
-            padding: 2.2rem 0;
-            gap: 5.6rem;
-        }
-
-        &__text {
-            font-size: 2.3rem;
-            max-width: 60%;
-            margin-top: 1rem;
-        }
-    }
-
-    .embla {
         &__arrow {
             width: 100px;
             height: 100px;
@@ -148,32 +170,8 @@
             right: 6%;
         }
     }
-}
 
-@include media-up(lg) {
-    .testimonials {
-        padding: 9.7rem 0;
-    }
-
-    .testimonial {
-        &__stars {
-            margin-top: -2.7rem;
-            font-size: 2.6rem;
-            gap: 1.8rem;
-        }
-
-        &__card {
-            padding: 2.7rem 0;
-            gap: 6.8rem;
-        }
-
-        &__text {
-            margin-top: 0;
-            max-width: 54%;
-        }
-    }
-
-    .embla {
+    @include media-up(lg) {
         &__arrow {
             top: 28%;
         }
