@@ -57,6 +57,7 @@
     &__card-text {
         font-size: 1.8rem;
         color: $text-800;
+        text-align: center;
     }
 
     &__ticket-icon {
@@ -133,7 +134,7 @@
 
         &__img {
             width: calc(100% + (50vw - 625px));
-            margin-left: calc(625px - 50vw);
+            margin-left: clamp(-140px, calc(625px - 50vw), -24px);
         }
 
         &__cards {
