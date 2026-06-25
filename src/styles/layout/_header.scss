@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
-.nav-container {
+.navigation {
     @include flex(row, space-between, center, 0);
     padding: 3.7rem 1.5rem;
 
@@ -103,7 +103,7 @@
 /* Tablet */
 @media (min-width: map-get($breakpoints, sm)) {
 
-    .nav-container {
+    .navigation {
         @include flex(row, space-around, center, 4rem);
         padding: 3.2rem 6.4rem;
 
@@ -132,7 +132,7 @@
 /* Desktop */
 @media (min-width: map-get($breakpoints, lg)) {
 
-    .nav-container {
+    .navigation {
         @include flex(row, space-between, center);
         padding: 7.2rem 0;
         @include container;
