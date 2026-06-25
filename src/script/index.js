@@ -39,3 +39,13 @@ navMenu.addEventListener('keydown', (e) => {
         hamburger.focus();
     }
 });
+
+const packagesCount = document.getElementById("packages-count");
+const hotelsCount = document.getElementById("hotels-count");
+const airlinesCount = document.getElementById("airlines-count");
+const customersCount = document.getElementById("customers-count");
+
+packagesCount.innerText = "500+";
+hotelsCount.innerText = "100";
+airlinesCount.innerText = "7";
+customersCount.innerText = "2k+";
