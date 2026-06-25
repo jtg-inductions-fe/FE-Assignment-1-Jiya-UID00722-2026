@@ -109,7 +109,7 @@
 
         &__actions {
             order: 3;
-            @include flex;
+            @include flex($justify: flex-end);
             flex: 1;
         }
 
