@@ -101,7 +101,7 @@
 
 
 /* Tablet */
-@media (min-width: map-get($breakpoints, sm)) {
+@include media-up(sm) {
 
     .navigation {
         @include flex(row, space-around, center, 4rem);
@@ -130,7 +130,7 @@
 
 
 /* Desktop */
-@media (min-width: map-get($breakpoints, lg)) {
+@include media-up(lg) {
 
     .navigation {
         @include flex(row, space-between, center);
