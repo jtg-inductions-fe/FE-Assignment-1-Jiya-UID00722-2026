@@ -83,7 +83,7 @@
     }
 
     @include media-up(lg) {
-        max-width: 1250px;
+        max-width: min(1250px, calc(100% - 48px));
     }
 }
 
