@@ -6,7 +6,7 @@
     @include flex($direction: column);
     position: relative;
 
-    &--left {
+    &__left {
         flex: 1;
     }
 
@@ -15,7 +15,7 @@
         height: auto;
     }
 
-    &--right {
+    &__right {
         flex: 1;
         @include flex(column, center, center, 1rem);
     }
