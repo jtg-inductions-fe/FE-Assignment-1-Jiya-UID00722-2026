@@ -1,0 +1,56 @@
+@use '../abstracts/' as *;
+
+.testimonials {
+    @include flex(column,center,center,3rem);
+    padding: 9.4rem 0;
+
+    &__headings{
+        @include flex(column,center,center,1.6rem);
+    }
+}
+
+.testimonial {
+    &__card {
+        @include flex(column,center,center,6.6rem);
+    }
+
+    &__image {
+        width: 128px;
+        height: 128px;
+    }
+
+    &__username {
+        line-height: 120%;
+        font-weight: $font-weight-700;
+
+        &--primary {
+            font-size: 2.8rem;
+            color: $orange-color;
+        }
+
+        &--secondary {
+            font-size: 2.3rem;
+            color: $text-600;
+        }
+    }
+
+    &__stars {
+        @include flex(row, center, center, 1.8rem);
+        color: $yellow-color;
+        font-size: 2.5rem;
+        margin-top: -3.2rem;
+    }
+    &__text{
+        font-size: 1.8rem;
+        text-align: center;
+        color: $text-600;
+    }
+}
+
+@include media-up(sm){
+    .testimonial{
+        &__stars {
+        font-size: 3.2rem;
+    }
+    }
+}
