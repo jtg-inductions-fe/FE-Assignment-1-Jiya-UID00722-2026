@@ -4,6 +4,11 @@
     @include flex(column, center, center, 3rem);
     padding: 9.4rem 0;
 
+    background-image: url("/assets/images/testimonials/testimonial-bg.png");
+    background-size: cover;
+    background-position: center 34%;
+    background-repeat: no-repeat;
+
     &__headings {
         @include flex(column, center, center, 1.6rem);
     }
@@ -157,11 +162,13 @@
             padding: 2.7rem 0;
             gap: 6.8rem;
         }
-        &__text{
+
+        &__text {
             margin-top: 0;
             max-width: 54%;
         }
     }
+
     .embla {
         &__arrow {
             top: 28%;
