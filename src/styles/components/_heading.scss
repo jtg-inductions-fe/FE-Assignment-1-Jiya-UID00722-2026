@@ -14,10 +14,8 @@
         font-size: 3.2rem;
         line-height: 120%;
     }
-}
 
-@include media-up(sm) {
-    .heading {
+    @include media-up(sm) {
         &--primary {
             font-size: 2.3rem;
         }
@@ -26,11 +24,8 @@
             font-size: 4rem;
         }
     }
-}
 
-@include media-up(lg) {
-    .heading {
-
+    @include media-up(lg) {
         &--secondary {
             font-size: 4.4rem;
         }

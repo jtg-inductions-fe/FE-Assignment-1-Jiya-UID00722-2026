@@ -62,10 +62,8 @@
     &__ticket-icon {
         display: none;
     }
-}
 
-@include media-up(sm) {
-    .travel {
+    @include media-up(sm) {
         padding: 6.4rem 0 1.5rem 0;
         gap: 3.5rem;
 
@@ -104,10 +102,8 @@
             z-index: $z-index-m1;
         }
     }
-}
 
-@include media-up(lg) {
-    .travel {
+    @include media-up(lg) {
         flex-direction: row;
         gap: 0;
 
@@ -160,4 +156,5 @@
             border-radius: 50%;
         }
     }
+
 }
