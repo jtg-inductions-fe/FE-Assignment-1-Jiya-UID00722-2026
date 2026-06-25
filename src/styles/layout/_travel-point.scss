@@ -107,11 +107,11 @@
         flex-direction: row;
         gap: 0;
 
-        &--left {
+        &__left {
             flex: 16.5;
         }
 
-        &--right {
+        &__right {
             flex: 10;
             justify-content: flex-start;
             gap: 6rem;
