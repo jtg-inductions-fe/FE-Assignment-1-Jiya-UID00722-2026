@@ -40,8 +40,14 @@
         @include flex($direction: column, $align: flex-start, $gap: 3rem);
     }
 
-    &__brand {
+    &__brand-link {
+        @include link-style-none;
         @include flex($gap: 1.6rem);
+        color: $text-800;
+
+        &:focus-visible {
+            @include focus-visible();
+        }
     }
 
     &__brand-name {
@@ -66,13 +72,13 @@
         width: 3.2rem;
         border-radius: 50%;
         @include flex-center;
-    }
-
-    &__social-icon-link {
-        @include flex-center;
         @include link-style-none;
         color: $background-color;
         font-size: 1.8rem;
+
+        &:focus-visible {
+            @include focus-visible();
+        }
     }
 
     &__links {
@@ -84,6 +90,12 @@
         cursor: pointer;
         border: none;
         transition: 0.4s;
+        background: none;
+        width: 100%;
+
+        &:focus-visible{
+            @include focus-visible();
+        }
     }
 
     &__links-title-text {
@@ -110,6 +122,7 @@
         transition: max-height 0.2s ease-out;
         @include flex($direction: column, $gap: 3.2rem);
         margin-top: 3.2rem;
+        font-style: normal;
     }
 
     &__link {
@@ -121,6 +134,10 @@
 
         &:hover {
             color: $text-800;
+        }
+
+        &:focus-visible {
+            @include focus-visible();
         }
     }
 
@@ -134,6 +151,7 @@
 
         &__links-list {
             max-height: none;
+            overflow: visible;
         }
 
         &__links-title-icon {
@@ -147,6 +165,10 @@
         &__links {
             flex-direction: row;
             justify-content: space-between;
+        }
+
+        &__links-title {
+            cursor: default;
         }
     }
 
