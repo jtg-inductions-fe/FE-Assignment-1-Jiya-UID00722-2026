@@ -37,7 +37,7 @@
         @include flex-center;
     }
 
-    &__social-icon-link{
+    &__social-icon-link {
         @include flex-center;
         @include link-style-none;
         color: $background-color;
@@ -132,6 +132,7 @@
         &__links {
             flex: 1;
             font-size: 2.6rem;
+            @include grid(3, 4rem);
         }
 
         &__description {
