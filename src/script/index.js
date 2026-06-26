@@ -164,16 +164,54 @@ hotelsCount.innerText = "100";
 airlinesCount.innerText = "7";
 customersCount.innerText = "2k+";
 
-// 
+/**
+ * Footer accordion functionality
+ *
+ * Adds click event listeners to each footer accordion heading,
+ * allowing users to expand or collapse the associated content panel
+ *
+ * When an accordion is opened, its content panel's maximum height is
+ * set to its scroll height to enable a smooth CSS transition. Clicking
+ * the heading again collapses the panel
+ */
 
+/**
+ * Collection of accordion toggle elements
+ *
+ * @type {HTMLCollectionOf<Element>}
+ */
 
-var acc = document.getElementsByClassName("footer__links-title");
-var i;
+const acc = document.getElementsByClassName("footer__links-title");
 
-for (i = 0; i < acc.length; i++) {
+/**
+ * Attaches click handlers to each accordion toggle
+ */
+
+for (let i = 0; i < acc.length; i++) {
+
+  /**
+   * Toggles the accordion panel when its heading is clicked
+   *
+   * @listens click
+   * @returns {void}
+   */
+
   acc[i].addEventListener("click", function() {
+
+    // Toggle active state on the accordion heading
+
     this.classList.toggle("footer__links-title--active");
-    var panel = this.nextElementSibling;
+
+     /**
+     * The content panel associated with the clicked accordion heading
+     *
+     * @type {HTMLElement}
+     */
+
+    const panel = this.nextElementSibling;
+
+    // Collapse the panel if it is open; otherwise expand it
+
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
