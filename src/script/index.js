@@ -163,3 +163,21 @@ packagesCount.innerText = "500+";
 hotelsCount.innerText = "100";
 airlinesCount.innerText = "7";
 customersCount.innerText = "2k+";
+
+// 
+
+
+var acc = document.getElementsByClassName("footer__links-title");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("footer__links-title--active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}

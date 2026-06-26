@@ -1,0 +1,112 @@
+@use '../abstracts/' as *;
+
+.footer {
+    padding: 3.8rem 3.2rem 3.2rem 3.2rem;
+    @include flex($direction: column, $gap: 8rem);
+    @include container;
+
+    &__main {
+        @include flex($direction: column, $align: flex-start, $gap: 3rem);
+    }
+
+    &__brand {
+        @include flex($gap: 1.6rem);
+    }
+
+    &__brand-name {
+        font-size: 2.4rem;
+        font-weight: $font-weight-900;
+    }
+
+    &__description {
+        font-size: 1.6rem;
+        line-height: 160%;
+        font-weight: $font-weight-400;
+        color: $text-500;
+    }
+
+    &__social {
+        @include flex($gap: 3.2rem);
+    }
+
+    &__social-icon {
+        background-color: $primary-color;
+        height: 3.2rem;
+        width: 3.2rem;
+        border-radius: 50%;
+        @include flex-center;
+        color: $background-color;
+        font-size: 1.8rem;
+    }
+
+    &__links {
+        @include flex($direction: column, $gap: 4.6rem);
+    }
+
+    &__links-title {
+        @include flex($justify: space-between);
+        cursor: pointer;
+        border: none;
+        transition: 0.4s;
+    }
+
+    &__links-title-text {
+        font-size: 2.3rem;
+        line-height: 120%;
+        font-weight: $font-weight-700;
+        color: $text-800;
+    }
+
+    &__links-title-icon {
+        color: $text-800;
+        border: 2px solid $text-800;
+        border-radius: 50%;
+        @include flex-center;
+        width: 2.15rem;
+        height: 2.15rem;
+        font-size: 1.8rem;
+    }
+
+    &__links-list {
+        @include list-style-none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        @include flex($direction: column, $gap: 3.2rem);
+        margin-top: 3.2rem;
+    }
+
+    &__link {
+        @include link-style-none;
+        color: $text-600;
+        font-size: 1.8rem;
+        font-weight: $font-weight-400;
+        line-height: 160%;
+
+        &:hover {
+            color: $text-800;
+        }
+    }
+
+    @include media-up(sm) {
+        padding: 21.5rem 0 5.5rem 0;
+        gap: 7rem;
+
+        &__description {
+            font-size: 2.3rem;
+        }
+
+        &__links-list {
+            max-height: none;
+        }
+
+        &__links-title-icon {
+            display: none;
+        }
+
+        .footer__links {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
