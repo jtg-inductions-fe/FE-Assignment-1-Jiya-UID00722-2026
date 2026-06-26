@@ -35,6 +35,11 @@
         width: 3.2rem;
         border-radius: 50%;
         @include flex-center;
+    }
+
+    &__social-icon-link{
+        @include flex-center;
+        @include link-style-none;
         color: $background-color;
         font-size: 1.8rem;
     }
