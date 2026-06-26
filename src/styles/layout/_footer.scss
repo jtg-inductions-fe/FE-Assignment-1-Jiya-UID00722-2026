@@ -109,6 +109,10 @@
             display: none;
         }
 
+        &__links-list{
+            max-width: 270px;
+        }
+
         &__links {
             flex-direction: row;
             justify-content: space-between;
