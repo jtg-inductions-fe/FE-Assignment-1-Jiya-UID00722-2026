@@ -68,6 +68,10 @@
         padding: 6.4rem 0 1.5rem 0;
         gap: 3.5rem;
 
+        &__right {
+            gap: 4rem;
+        }
+
         &__img {
             width: 100vw;
             max-width: none;
