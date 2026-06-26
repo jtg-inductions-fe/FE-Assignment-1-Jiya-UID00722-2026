@@ -10,6 +10,8 @@ const closeBtn = document.getElementById("closeBtn");
 function toggleMenu() {
     const isOpen = navMenu.classList.toggle('navigation__menu--open');
 
+    navMenu.hidden = !isOpen;
+
     hamburger.setAttribute('aria-expanded', isOpen);
 
     if (isOpen) {
