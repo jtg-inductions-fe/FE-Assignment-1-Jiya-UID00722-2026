@@ -1,5 +1,36 @@
 @use '../abstracts/' as *;
 
+.footer-section {
+
+    &__bg {
+        display: none;
+    }
+
+    @include media-up(sm) {
+        position: relative;
+
+        &__bg {
+            display: block;
+            position: absolute;
+            top: 360px;
+            right: 0;
+            z-index: $z-index-m1;
+        }
+
+        &__bg-img {
+            height: 352px;
+            width: auto;
+        }
+    }
+
+    @include media-up(lg) {
+        &__bg {
+            top: 185px;
+        }
+    }
+
+}
+
 .footer {
     padding: 3.8rem 3.2rem 3.2rem 3.2rem;
     @include flex($direction: column, $gap: 8rem);
@@ -109,7 +140,7 @@
             display: none;
         }
 
-        &__links-list{
+        &__links-list {
             max-width: 270px;
         }
 
