@@ -4,27 +4,27 @@
     @include flex(column, center, center, 3rem);
     padding: 9.4rem 0;
 
-    background-image: url("/assets/images/testimonials/testimonial-bg.png");
-    background-size: cover;
-    background-position: center 34%;
-    background-repeat: no-repeat;
-
     &__headings {
         @include flex(column, center, center, 1.6rem);
     }
 
     @include media-up(sm) {
         padding: 1.2rem 0;
+        background-image: url("/assets/images/testimonials/testimonial-bg.png");
+        background-size: cover;
+        background-position: center 48%;
+        background-repeat: no-repeat;
     }
 
     @include media-up(lg) {
         padding: 9.7rem 0;
+        background-position: center 34%;
     }
 }
 
 .testimonial {
     &__card {
-        @include flex(column, center, center, 6.6rem);
+        @include flex(column, center, center, 7.6rem);
         padding: 3rem 0;
     }
 
@@ -52,13 +52,14 @@
         @include flex(row, center, center, 1.8rem);
         color: $yellow-color;
         font-size: 2.5rem;
-        margin-top: -3.2rem;
+        margin-top: -3.8rem;
     }
 
     &__text {
         font-size: 1.8rem;
         text-align: center;
         color: $text-600;
+        margin-top: -1rem;
     }
 
     @include media-up(sm) {
@@ -159,7 +160,7 @@
         &__arrow {
             width: 100px;
             height: 100px;
-            top: 30%;
+            top: clamp(10%, 20vw, 30%);
         }
 
         &__prev {
