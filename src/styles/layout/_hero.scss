@@ -6,10 +6,10 @@
     @include container;
 
     &__content {
-        @include flex(column, center, center, 20px);
+        @include flex(column, center, center, 2rem);
         position: relative;
         top: -111px;
-        padding: 4rem 0.8rem 0 0.8rem;
+        padding: 4rem 0.85rem 0 0.85rem;
 
         @include media-up(sm) {
             top: -17.8rem;
