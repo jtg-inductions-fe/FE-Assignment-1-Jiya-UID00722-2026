@@ -6,7 +6,7 @@
     position: relative;
     flex-wrap: wrap;
     @include flex($justify: center, $gap: 2rem);
-    top: -9rem;
+    top: -8rem;
 
     &__break {
         display: block;
