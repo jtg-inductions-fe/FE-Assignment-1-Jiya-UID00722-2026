@@ -19,7 +19,7 @@
 
         @include media-up(lg) {
             padding: 2.7rem 0;
-            gap: 7.8rem;
+            gap: 3.8rem;
         }
     }
 
@@ -80,7 +80,7 @@
         }
 
         @include media-up(lg) {
-            max-width: 54%;
+            max-width: 62%;
         }
     }
 
@@ -95,5 +95,6 @@
     @include media-up(lg) {
         padding: 9.7rem 0;
         background-position: center 34%;
+        gap: 2.2rem;
     }
 }
