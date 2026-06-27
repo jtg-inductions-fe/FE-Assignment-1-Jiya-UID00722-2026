@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
-.testimonials {
+.testimonial {
     @include flex(column, center, center, 3rem);
     padding: 9.4rem 0;
 
@@ -8,21 +8,6 @@
         @include flex(column, center, center, 1.6rem);
     }
 
-    @include media-up(sm) {
-        padding: 1.2rem 0;
-        background-image: url("/assets/images/testimonials/testimonial-bg.png");
-        background-size: cover;
-        background-position: center 48%;
-        background-repeat: no-repeat;
-    }
-
-    @include media-up(lg) {
-        padding: 9.7rem 0;
-        background-position: center 34%;
-    }
-}
-
-.testimonial {
     &__card {
         @include flex(column, center, center, 7.6rem);
         padding: 3rem 0;
@@ -92,5 +77,18 @@
             margin-top: -1rem;
             max-width: 54%;
         }
+    }
+
+    @include media-up(sm) {
+        padding: 1.2rem 0;
+        background-image: url("/assets/images/testimonials/testimonial-bg.png");
+        background-size: cover;
+        background-position: center 48%;
+        background-repeat: no-repeat;
+    }
+
+    @include media-up(lg) {
+        padding: 9.7rem 0;
+        background-position: center 34%;
     }
 }
