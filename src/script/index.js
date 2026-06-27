@@ -183,6 +183,8 @@ customersCount.innerText = "2k+";
 
 const acc = document.getElementsByClassName("footer__links-title");
 
+console.log(acc);
+
 /**
  * Attaches click handlers to each accordion toggle
  */

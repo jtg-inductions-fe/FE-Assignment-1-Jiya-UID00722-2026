@@ -96,6 +96,14 @@
         &:focus-visible {
             @include focus-visible();
         }
+
+        &--mobile {
+            display: flex;
+
+            @include media-up(sm) {
+                display: none;
+            }
+        }        
     }
 
     &__links-title-text {
@@ -103,6 +111,13 @@
         line-height: 120%;
         font-weight: $font-weight-700;
         color: $text-800;
+        &--desktop {
+            display: none;
+
+            @include media-up(sm) {
+                display: block;
+            }
+        }
     }
 
     &__links-title-icon {
