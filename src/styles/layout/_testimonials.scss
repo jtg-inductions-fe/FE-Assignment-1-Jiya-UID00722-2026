@@ -31,16 +31,16 @@
     &__username {
         line-height: 120%;
         font-weight: $font-weight-700;
+    }
 
-        &--primary {
-            font-size: 2.8rem;
-            color: $orange-color;
-        }
+    &__name {
+        font-size: 2.8rem;
+        color: $orange-color;
+    }
 
-        &--secondary {
-            font-size: 2.3rem;
-            color: $text-600;
-        }
+    &__role {
+        font-size: 2.3rem;
+        color: $text-600;
     }
 
     &__stars {
