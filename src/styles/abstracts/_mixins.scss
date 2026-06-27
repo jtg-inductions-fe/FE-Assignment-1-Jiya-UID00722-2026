@@ -6,12 +6,14 @@
     font-family: $family;
 }
 
-@mixin respond($breakpoint) {
+@mixin media-up($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (min-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
-    } @else {
+    }
+
+    @else {
         @error "Unknown breakpoint `#{$breakpoint}`. Expected one of: #{map-keys($breakpoints)}";
     }
 }
@@ -81,6 +83,20 @@
     }
 
     @include media-up(lg) {
-        max-width: 1250px;
+        max-width: min(1250px, calc(100% - 48px));
     }
+}
+
+@mixin link-style-none {
+    text-decoration: none;
+}
+
+@mixin list-style-none {
+    list-style: none;
+}
+
+@mixin focus-visible($color: $primary-color, $offset: 4px) {
+    outline: none;
+    outline: 3px solid $color;
+    outline-offset: $offset;
 }

@@ -1,0 +1,189 @@
+@use '../abstracts/' as *;
+
+.navigation {
+    @include flex(row, space-between, center, 0);
+    padding: 3.7rem 1.5rem;
+
+    &__logo {
+        order: 1;
+        @include flex;
+        flex: 1;
+    }
+
+    &__logo-link {
+        @include flex-center;
+    }
+
+    &__actions {
+        display: none;
+    }
+
+    &__actions-btn {
+        &--login:focus-visible {
+            @include focus-visible($primary-color, 0px);
+        }
+
+        &--signup:focus-visible {
+            @include focus-visible($primary-color, 2px);
+        }
+    }
+
+    &__hamburger {
+        @include flex($justify: flex-end);
+        order: 2;
+        flex: 1;
+    }
+
+    &__hamburger-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 2.7rem;
+        border-radius: 10px;
+        width: fit-content;
+    }
+
+    &__hamburger-btn:focus-visible {
+        @include focus-visible($primary-color, 3px);
+    }
+
+    &__menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        background-color: $primary-color;
+        width: 55%;
+        height: 100vh;
+        transition: all 0.3s;
+        display: none;
+        gap: 10rem;
+        padding: 6rem 4rem 0 0;
+        z-index: $z-index-1000;
+    }
+
+    &__links {
+        @include flex(column, center, flex-end);
+        @include list-style-none;
+        gap: 7rem;
+    }
+
+    &__link {
+        @include link-style-none;
+        color: $background-color;
+        font-size: 1.8rem;
+        font-weight: $font-weight-700;
+
+        &--active {
+            color: $text-500;
+        }
+
+        &:focus-visible {
+            @include focus-visible($background-color);
+        }
+    }
+
+    &__close-btn {
+        display: block;
+        padding: 0;
+        font-size: 2.7rem;
+
+        &:focus-visible {
+            @include focus-visible($background-color, 5px);
+        }
+    }
+
+    &__menu--open {
+        right: 0;
+        @include flex($direction: column, $align: flex-end, $gap: 8rem);
+    }
+
+    &__logo-link:focus-visible {
+        @include focus-visible($primary-color, 3px);
+    }
+}
+
+
+/* Tablet */
+@include media-up(sm) {
+
+    .navigation {
+        @include flex(row, space-around, center, 4rem);
+        padding: 3.2rem 6.4rem;
+
+        &__actions {
+            order: 3;
+            @include flex($justify: flex-end);
+            flex: 1;
+        }
+
+        &__logo {
+            justify-content: center;
+            order: 2;
+            flex: 1;
+        }
+
+        &__hamburger {
+            order: 1;
+            justify-content: flex-start;
+            flex: 1;
+        }
+
+    }
+}
+
+
+/* Desktop */
+@include media-up(lg) {
+
+    .navigation {
+        @include flex(row, space-between, center);
+        padding: 7.2rem 0;
+        @include container;
+
+        &__logo {
+            order: initial;
+            flex: initial;
+        }
+
+        &__hamburger {
+            display: none;
+        }
+
+        &__actions {
+            order: initial;
+            flex: none;
+        }
+
+        &__menu {
+            @include flex($direction: column, $align: flex-end);
+            position: static;
+            width: auto;
+            height: auto;
+            background: none;
+            padding: 0;
+        }
+
+        &__links {
+            flex-direction: row;
+        }
+
+        &__link {
+            color: $text-500;
+            font-size: 1.5rem;
+
+            &:focus-visible {
+                @include focus-visible($primary-color);
+            }
+
+            &:hover {
+                color: $text-700;
+            }
+
+            &--active {
+                color: $text-700;
+            }
+        }
+
+        &__close-btn {
+            display: none;
+        }
+    }
+}
