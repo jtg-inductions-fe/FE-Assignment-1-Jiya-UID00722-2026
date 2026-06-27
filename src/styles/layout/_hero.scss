@@ -8,15 +8,16 @@
     &__content {
         @include flex(column, center, center, 20px);
         position: relative;
-        top: -125px;
+        top: -111px;
         padding: 4rem 0.8rem 0 0.8rem;
 
         @include media-up(sm) {
-            top: -18.8rem;
+            top: -17.8rem;
             gap: 2.5rem;
         }
 
         @include media-up(lg) {
+            top: -18rem;
             flex: 6;
             align-items: flex-start;
             margin-top: 10rem;
@@ -64,6 +65,7 @@
         @include media-up(lg) {
             text-align: left;
             font-size: 7rem;
+            margin-top: 1rem;
         }
     }
 
@@ -77,6 +79,7 @@
         }
 
         @include media-up(lg) {
+            margin-top: 0;
             text-align: left;
         }
     }
@@ -94,6 +97,7 @@
 
         @include media-up(lg) {
             justify-content: flex-start;
+            margin-top: 0;
         }
     }
 
@@ -141,7 +145,7 @@
     &__gallery {
         display: flex;
         width: 75%;
-        gap: 1.6rem;
+        gap: 2.6rem;
         position: relative;
         top: -11.8rem;
 
@@ -177,7 +181,7 @@
 
         &--telegram {
             background-color: $secondary-color;
-            top: 40%;
+            top: 42%;
             left: -1.6rem;
 
             @include media-up(sm) {
@@ -187,7 +191,7 @@
 
         &--contact {
             background-color: $orange-color;
-            bottom: 0;
+            bottom: -1.5rem;
             left: 65%;
         }
 
