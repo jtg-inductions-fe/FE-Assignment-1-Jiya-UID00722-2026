@@ -93,7 +93,7 @@
         background: none;
         width: 100%;
 
-        &:focus-visible{
+        &:focus-visible {
             @include focus-visible();
         }
     }
@@ -123,6 +123,10 @@
         @include flex($direction: column, $gap: 3.2rem);
         margin-top: 3.2rem;
         font-style: normal;
+    }
+
+    &__links-list[hidden] {
+        display: none;
     }
 
     &__link {

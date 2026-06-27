@@ -186,8 +186,12 @@ const acc = document.getElementsByClassName("footer__links-title");
 /**
  * Attaches click handlers to each accordion toggle
  */
-
+if (window.innerWidth < 768) {
 for (let i = 0; i < acc.length; i++) {
+
+  // Hide all panels initially
+  const panel = acc[i].nextElementSibling;
+  panel.hidden = true;
 
   /**
    * Toggles the accordion panel when its heading is clicked
@@ -196,26 +200,28 @@ for (let i = 0; i < acc.length; i++) {
    * @returns {void}
    */
 
-  acc[i].addEventListener("click", function() {
+  acc[i].addEventListener("click", function () {
 
     // Toggle active state on the accordion heading
 
     this.classList.toggle("footer__links-title--active");
 
-     /**
-     * The content panel associated with the clicked accordion heading
-     *
-     * @type {HTMLElement}
-     */
+    /**
+    * The content panel associated with the clicked accordion heading
+    *
+    * @type {HTMLElement}
+    */
 
     const panel = this.nextElementSibling;
 
+    const expanded = this.getAttribute("aria-expanded") === "true";
+
+    this.setAttribute("aria-expanded", !expanded);
+
     // Collapse the panel if it is open; otherwise expand it
 
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
+    panel.hidden = expanded;
+      panel.style.maxHeight = expanded ? null : panel.scrollHeight + "px";  
   });
+}
 }
