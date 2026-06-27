@@ -26,6 +26,16 @@
     &__card {
         @include flex(column, center, center, 7.6rem);
         padding: 3rem 0;
+
+        @include media-up(sm) {
+            padding: 2.2rem 0;
+            gap: 7.2rem;
+        }
+
+        @include media-up(lg) {
+            padding: 2.7rem 0;
+            gap: 7.8rem;
+        }
     }
 
     &__image {
@@ -53,6 +63,16 @@
         color: $yellow-color;
         font-size: 2.5rem;
         margin-top: -3.8rem;
+
+        @include media-up(sm) {
+            margin-top: -3.4rem;
+        }
+
+        @include media-up(lg) {
+            margin-top: -3.2rem;
+            font-size: 2.6rem;
+            gap: 1.8rem;
+        }
     }
 
     &__text {
@@ -60,43 +80,19 @@
         text-align: center;
         color: $text-600;
         margin-top: -1rem;
-    }
 
-    @include media-up(sm) {
-        &__stars {
-            margin-top: -3.4rem;
-        }
-
-        &__card {
-            padding: 2.2rem 0;
-            gap: 7.2rem;
-        }
-
-        &__text {
+        @include media-up(sm) {
             font-size: 2.3rem;
             max-width: 60%;
             margin-top: -1rem;
-        }
-    }
 
-    @include media-up(lg) {
-        &__stars {
-            margin-top: -3.2rem;
-            font-size: 2.6rem;
-            gap: 1.8rem;
         }
 
-        &__card {
-            padding: 2.7rem 0;
-            gap: 7.8rem;
-        }
-
-        &__text {
+        @include media-up(lg) {
             margin-top: -1rem;
             max-width: 54%;
         }
     }
-
 }
 
 .embla {
@@ -124,14 +120,40 @@
         @include flex-center;
         position: absolute;
         top: 12%;
+
+        @include media-up(sm) {
+            width: 100px;
+            height: 100px;
+            top: clamp(10%, 20vw, 30%);
+        }
+
+        @include media-up(lg) {
+            top: 28%;
+        }
     }
 
     &__prev {
         left: 4%;
+
+        @include media-up(sm) {
+            left: 6%;
+        }
+
+        @include media-up(lg) {
+            left: 9%;
+        }
     }
 
     &__next {
         right: 4%;
+
+        @include media-up(sm) {
+            right: 6%;
+        }
+
+        @include media-up(lg) {
+            right: 9%;
+        }
     }
 
     &__dots {
@@ -152,37 +174,6 @@
 
         &:focus-visible {
             @include focus-visible($primary-color, 2px);
-        }
-    }
-
-    @include media-up(sm) {
-
-        &__arrow {
-            width: 100px;
-            height: 100px;
-            top: clamp(10%, 20vw, 30%);
-        }
-
-        &__prev {
-            left: 6%;
-        }
-
-        &__next {
-            right: 6%;
-        }
-    }
-
-    @include media-up(lg) {
-        &__arrow {
-            top: 28%;
-        }
-
-        &__prev {
-            left: 9%;
-        }
-
-        &__next {
-            right: 9%;
         }
     }
 }
