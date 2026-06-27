@@ -10,6 +10,18 @@
         position: relative;
         top: -125px;
         padding: 4rem 0.8rem 0 0.8rem;
+
+        @include media-up(sm) {
+            top: -18.8rem;
+            gap: 2.5rem;
+        }
+
+        @include media-up(lg) {
+            flex: 6;
+            align-items: flex-start;
+            margin-top: 10rem;
+            gap: 4rem;
+        }
     }
 
     &__badge {
@@ -43,18 +55,46 @@
         &--highlight {
             color: $secondary-color;
         }
+
+        @include media-up(sm) {
+            font-size: 5.8rem;
+            margin-top: 2.8rem;
+        }
+
+        @include media-up(lg) {
+            text-align: left;
+            font-size: 7rem;
+        }
     }
 
     &__description {
         font-size: 1.65rem;
         text-align: center;
         margin-top: 0.5rem;
+
+        @include media-up(sm) {
+            font-size: 2rem;
+        }
+
+        @include media-up(lg) {
+            text-align: left;
+        }
     }
 
     &__actions {
         @include flex($direction: column, $gap: 2.8rem);
         width: 100%;
         margin-top: 1.3rem;
+
+        @include media-up(sm) {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.6rem;
+        }
+
+        @include media-up(lg) {
+            justify-content: flex-start;
+        }
     }
 
     &__action {
@@ -70,6 +110,11 @@
         &--second {
             border: 1px solid $light-background-color;
         }
+
+        @include media-up(sm) {
+            width: auto;
+            padding: 1.6rem 3.2rem;
+        }
     }
 
     &__play-icon {
@@ -79,6 +124,10 @@
 
     &__media {
         @include flex($direction: column, $align: center);
+
+        @include media-up(lg) {
+            flex: 11;
+        }
     }
 
     &__bg {
@@ -95,6 +144,10 @@
         gap: 1.6rem;
         position: relative;
         top: -11.8rem;
+
+        @include media-up(sm) {
+            top: -21.8rem;
+        }
     }
 
     &__card {
@@ -126,12 +179,22 @@
             background-color: $secondary-color;
             top: 40%;
             left: -1.6rem;
+
+            @include media-up(sm) {
+                left: -4.2rem;
+            }
         }
 
         &--contact {
             background-color: $orange-color;
             bottom: 0;
             left: 65%;
+        }
+
+        @include media-up(sm) {
+            width: 6.4rem;
+            height: 6.4rem;
+            font-size: 2.5rem;
         }
     }
 
@@ -147,14 +210,52 @@
         border-radius: 50px;
         background-color: $background-color;
         font-size: 1rem;
+
+        @include media-up(sm) {
+            right: -13%;
+            bottom: 26%;
+            font-size: 1.4rem;
+            padding: 1.6rem 3.2rem;
+            gap: 8px;
+        }
+    }
+
+    &__tag-icon {
+        @include media-up(sm) {
+            font-size: 2rem;
+            color: $yellow-color;
+        }
     }
 
     &__text-break {
         display: inline;
+
+        @include media-up(sm) {
+            display: block;
+        }
     }
 
     &__arrows {
         display: none;
+
+        @include media-up(sm) {
+            display: block;
+            position: absolute;
+            bottom: 9%;
+            left: -3%;
+        }
+
+        @include media-up(lg) {
+            bottom: 8%;
+            left: -7%;
+        }
+    }
+
+    &__arrows-img {
+        @include media-up(sm) {
+            width: 65px;
+            height: auto;
+        }
     }
 
     &::before {
@@ -174,85 +275,8 @@
         filter: blur(150px);
         pointer-events: none;
         z-index: $z-index-m1;
-    }
-}
 
-// Tablet
-
-@include media-up(sm) {
-    .hero {
-        padding: 6.4rem 6.4rem 0 6.4rem;
-        position: relative;
-
-        &__gallery {
-            top: -21.8rem;
-        }
-
-        &__icon {
-            width: 6.4rem;
-            height: 6.4rem;
-            font-size: 2.5rem;
-
-            &--telegram {
-                left: -4.2rem;
-            }
-        }
-
-        &__tag {
-            right: -13%;
-            bottom: 26%;
-            font-size: 1.4rem;
-            padding: 1.6rem 3.2rem;
-            gap: 8px;
-        }
-
-        &__tag-icon {
-            font-size: 2rem;
-            color: $yellow-color;
-        }
-
-        &__content {
-            top: -18.8rem;
-            gap: 2.5rem;
-        }
-
-        &__title {
-            font-size: 5.8rem;
-            margin-top: 2.8rem;
-        }
-
-        &__description {
-            font-size: 2rem;
-        }
-
-        &__text-break {
-            display: block;
-        }
-
-        &__actions {
-            flex-direction: row;
-            justify-content: center;
-            gap: 1.6rem;
-        }
-
-        &__action {
-            width: auto;
-            padding: 1.6rem 3.2rem;
-        }
-
-        &__arrows {
-            display: block;
-            position: absolute;
-            bottom: 9%;
-            left: -3%;
-        }
-
-        &__arrows-img {
-            width: 65px;
-            height: auto;
-        }
-
-        &::before {
+        @include media-up(sm) {
             content: "";
             position: absolute;
 
@@ -270,42 +294,14 @@
             pointer-events: none;
         }
     }
-}
 
-// Desktop
+    @include media-up(sm) {
+        padding: 6.4rem 6.4rem 0 6.4rem;
+        position: relative;
+    }
 
-@include media-up(xxl) {
-    .hero {
+    @include media-up(lg) {
         flex-direction: row;
         padding: 2.4rem 0 0 0;
-
-        &__content {
-            flex: 6;
-            align-items: flex-start;
-            margin-top: 10rem;
-            gap: 4rem;
-        }
-
-        &__media {
-            flex: 11;
-        }
-
-        &__title {
-            text-align: left;
-            font-size: 7rem;
-        }
-
-        &__description {
-            text-align: left;
-        }
-
-        &__actions {
-            justify-content: flex-start;
-        }
-
-        &__arrows {
-            bottom: 8%;
-            left: -7%;
-        }
     }
 }
