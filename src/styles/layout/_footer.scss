@@ -1,0 +1,218 @@
+@use '../abstracts/' as *;
+
+.footer {
+
+    &__bg {
+        display: none;
+    }
+
+    &__container {
+        padding: 3.8rem 3.2rem 3.2rem 3.2rem;
+        @include flex($direction: column, $gap: 8rem);
+        @include container;
+
+        @include media-up(sm) {
+            padding: 21.5rem 0 5.5rem 0;
+            gap: 7rem;
+        }
+
+        @include media-up(lg) {
+            padding: 19rem 0 11.2rem 0;
+            flex-direction: row;
+            gap: 7.8rem;
+        }
+    }
+
+    &__main {
+        @include flex($direction: column, $align: flex-start, $gap: 3rem);
+
+        @include media-up(lg) {
+            flex: 1;
+        }
+    }
+
+    &__brand-link {
+        @include link-style-none;
+        @include flex($gap: 1.6rem);
+        color: $text-800;
+
+        &:focus-visible {
+            @include focus-visible();
+        }
+    }
+
+    &__brand-name {
+        font-size: 2.4rem;
+        font-weight: $font-weight-900;
+    }
+
+    &__description {
+        font-size: 1.6rem;
+        line-height: 160%;
+        font-weight: $font-weight-400;
+        color: $text-500;
+
+        @include media-up(sm) {
+            font-size: 2.3rem;
+        }
+
+        @include media-up(lg) {
+            font-size: 2.4rem;
+            line-height: 170%;
+        }
+    }
+
+    &__social {
+        @include flex($gap: 3.2rem);
+
+        @include media-up(lg) {
+            margin-top: 3.5rem;
+            gap: 3.7rem;
+        }
+    }
+
+    &__social-icon {
+        background-color: $primary-color;
+        height: 3.2rem;
+        width: 3.2rem;
+        border-radius: 50%;
+        @include flex-center;
+        @include link-style-none;
+        color: $background-color;
+        font-size: 1.8rem;
+
+        &:focus-visible {
+            @include focus-visible();
+        }
+    }
+
+    &__links {
+        @include flex($direction: column, $gap: 4.6rem);
+
+        @include media-up(sm) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include media-up(lg) {
+            flex: 1;
+            font-size: 2.6rem;
+            @include grid(3, 4rem);
+        }
+    }
+
+    &__links-title {
+        @include flex($justify: space-between);
+        cursor: pointer;
+        border: none;
+        transition: 0.4s;
+        background: none;
+        width: 100%;
+
+        &:focus-visible {
+            @include focus-visible();
+        }
+
+        &--mobile {
+            display: flex;
+
+            @include media-up(sm) {
+                display: none;
+            }
+        }
+
+        @include media-up(sm) {
+            cursor: default;
+        }
+    }
+
+    &__links-title-text {
+        font-size: 2.3rem;
+        line-height: 120%;
+        font-weight: $font-weight-700;
+        color: $text-800;
+
+        &--desktop {
+            display: none;
+
+            @include media-up(sm) {
+                display: block;
+            }
+        }
+    }
+
+    &__links-title-icon {
+        color: $text-800;
+        border: 2px solid $text-800;
+        border-radius: 50%;
+        @include flex-center;
+        width: 2.15rem;
+        height: 2.15rem;
+        font-size: 1.8rem;
+
+        @include media-up(sm) {
+            display: none;
+        }
+    }
+
+    &__links-list {
+        @include list-style-none;
+        margin-top: 3.2rem;
+        font-style: normal;
+        display: none;
+
+        &--open {
+            @include flex($direction: column, $gap: 3.2rem);
+        }
+
+        @include media-up(sm) {
+            @include flex($direction: column, $gap: 3.2rem);
+            max-width: 270px;
+        }
+
+        @include media-up(lg) {
+            margin-top: 2.8rem;
+            gap: 2.5rem;
+        }
+    }
+
+    &__link {
+        @include link-style-none;
+        color: $text-600;
+        font-size: 1.8rem;
+        font-weight: $font-weight-400;
+        line-height: 160%;
+
+        &:hover {
+            color: $text-800;
+        }
+
+        &:focus-visible {
+            @include focus-visible();
+        }
+    }
+
+    @include media-up(sm) {
+        position: relative;
+
+        &__bg {
+            display: block;
+            position: absolute;
+            top: 360px;
+            right: 0;
+            z-index: $z-index-m1;
+        }
+
+        &__bg-img {
+            height: 352px;
+            width: auto;
+        }
+    }
+
+    @include media-up(lg) {
+        &__bg {
+            top: 185px;
+        }
+    }
+
+}

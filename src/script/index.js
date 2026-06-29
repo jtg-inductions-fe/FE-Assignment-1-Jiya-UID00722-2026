@@ -165,3 +165,34 @@ packagesCount.innerText = "500+";
 hotelsCount.innerText = "100";
 airlinesCount.innerText = "7";
 customersCount.innerText = "2k+";
+
+/**
+ * Footer accordion functionality
+ *
+ * Adds click event listeners to each footer accordion heading,
+ * allowing users to expand or collapse the associated content panel
+ *
+ * When an accordion is opened, its content panel's maximum height is
+ * set to its scroll height to enable a smooth CSS transition. Clicking
+ * the heading again collapses the panel
+ */
+
+/**
+ * Collection of accordion toggle elements
+ *
+ * @type {HTMLCollectionOf<Element>}
+ */
+
+const acc = document.querySelectorAll(".footer__links-title");
+
+acc.forEach(button => {
+  button.addEventListener("click", () => {
+    const isOpen = button.classList.toggle("footer__links-title--active");
+
+    const panel = button.nextElementSibling;
+
+    button.setAttribute("aria-expanded", String(isOpen));
+    panel.hidden = !isOpen;
+    panel.classList.toggle("footer__links-list--open", isOpen);
+  });
+});
