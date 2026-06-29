@@ -1,0 +1,166 @@
+@use '../abstracts/' as *;
+
+.travel {
+    @include container;
+    padding: 4rem 0;
+    @include flex($direction: column);
+    position: relative;
+
+    &__left {
+        flex: 1;
+
+        @include media-up(lg) {
+            flex: 16.5;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+
+        @include media-up(sm) {
+            width: 100vw;
+            max-width: none;
+            margin-left: calc(50% - 50vw);
+        }
+
+        @include media-up(lg) {
+            width: calc(100% + (50vw - 596.325px));
+            margin-left: clamp(-390px, calc(596.325px - 50vw), -24px);
+        }
+    }
+
+    &__right {
+        flex: 1;
+        @include flex(column, center, center, 1rem);
+
+        @include media-up(sm) {
+            gap: 4.1rem;
+        }
+
+        @include media-up(lg) {
+            flex: 10;
+            justify-content: flex-start;
+            gap: 4.5rem;
+        }
+    }
+
+    &__content {
+        padding: 2.3rem;
+        @include flex(column, center, center, 1.4rem);
+
+        @include media-up(lg) {
+            align-items: flex-start;
+            padding: 1.3rem 0;
+            gap: 1.5rem;
+        }
+    }
+
+    &__heading {
+        @include media-up(lg) {
+            text-align: left;
+        }
+    }
+
+    &__description {
+        font-size: 1.6rem;
+        line-height: 160%;
+        text-align: center;
+        margin-top: 1.6rem;
+        color: $text-500;
+
+        @include media-up(sm) {
+            font-size: 1.8rem;
+        }
+
+        @include media-up(lg) {
+            text-align: left;
+        }
+    }
+
+    &__cards {
+        @include grid(1);
+        width: 100%;
+        max-width: 34.8rem;
+        row-gap: 1.8rem;
+
+        @include media-up(sm) {
+            @include grid(2);
+            max-width: none;
+            column-gap: 3rem;
+            row-gap: 3.4rem;
+        }
+
+        @include media-up(lg) {
+            position: relative;
+        }
+    }
+
+    &__card {
+        border: 1px solid $text-400;
+        border-radius: 32px;
+        width: 100%;
+        padding: 2.8rem 3.2rem;
+        @include flex(column, center, center, 1rem);
+
+        @include media-up(lg) {
+            padding: 3.2rem;
+        }
+    }
+
+    &__card-count {
+        color: $orange-color;
+        font-size: 3.5rem;
+        font-weight: $font-weight-700;
+    }
+
+    &__card-text {
+        font-size: 1.8rem;
+        color: $text-800;
+        text-align: center;
+    }
+
+    &__ticket-icon {
+        display: none;
+
+        @include media-up(lg) {
+            display: block;
+            position: absolute;
+            right: -68px;
+            top: -42px;
+        }
+    }
+
+    &__ticket-icon-img {
+        @include media-up(lg) {
+            max-width: 120px;
+            border-radius: 50%;
+        }
+    }
+
+    @include media-up(sm) {
+        padding: 7.4rem 0 1.5rem 0;
+        gap: 3.5rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -250px;
+            right: -350px;
+            width: 500px;
+            height: 500px;
+            background: $yellow-color;
+            opacity: 50%;
+            filter: blur(250px);
+            pointer-events: none;
+            z-index: $z-index-m1;
+        }
+    }
+
+    @include media-up(lg) {
+        padding: 5.4rem 0 1.5rem 0;
+        flex-direction: row;
+        gap: 0;
+    }
+
+}

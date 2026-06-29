@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+
+.heading {
+    font-weight: $font-weight-700;
+    text-align: center;
+
+    &--primary {
+        color: $secondary-color;
+        font-size: 1.5rem;
+        letter-spacing: 20%;
+    }
+
+    &--secondary {
+        font-size: 3.2rem;
+        line-height: 120%;
+    }
+
+    @include media-up(sm) {
+        &--primary {
+            font-size: 2.3rem;
+        }
+
+        &--secondary {
+            font-size: 4rem;
+        }
+    }
+
+    @include media-up(lg) {
+        &--secondary {
+            font-size: 4.4rem;
+        }
+    }
+}

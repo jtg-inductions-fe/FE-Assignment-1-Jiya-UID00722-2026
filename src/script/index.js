@@ -41,3 +41,49 @@ navMenu.addEventListener('keydown', (e) => {
         hamburger.focus();
     }
 });
+
+/**
+ * References the DOM elements used to display platform statistics
+ *
+ * @type {HTMLElement|null}
+ */
+
+const packagesCount = document.getElementById("packages-count");
+
+/**
+ * References the DOM element used to display the total number of hotels
+ *
+ * @type {HTMLElement|null}
+ */
+
+const hotelsCount = document.getElementById("hotels-count");
+
+/**
+ * References the DOM element used to display the total number of airlines
+ *
+ * @type {HTMLElement|null}
+ */
+
+const airlinesCount = document.getElementById("airlines-count");
+
+/**
+ * References the DOM element used to display the total number of customers
+ *
+ * @type {HTMLElement|null}
+ */
+
+const customersCount = document.getElementById("customers-count");
+
+/**
+ * Updates the statistics counters with the latest values
+ *
+ * @description
+ * Sets the counts for packages, hotels, airlines, and customers
+ *
+ * @returns {void}
+ */
+
+packagesCount.innerText = "500+";
+hotelsCount.innerText = "100";
+airlinesCount.innerText = "7";
+customersCount.innerText = "2k+";

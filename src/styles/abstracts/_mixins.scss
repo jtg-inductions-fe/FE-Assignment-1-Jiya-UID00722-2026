@@ -103,7 +103,7 @@
     margin: auto;
 
     @include media-up(sm) {
-        max-width: 896px;
+        max-width: min(896px, calc(100% - 48px));
     }
 
     @include media-up(lg) {
