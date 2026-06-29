@@ -157,16 +157,16 @@
 
     &__links-list {
         @include list-style-none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        @include flex($direction: column, $gap: 3.2rem);
         margin-top: 3.2rem;
         font-style: normal;
+        display: none;
+
+        &--open {
+            @include flex($direction: column, $gap: 3.2rem);
+        }
 
         @include media-up(sm) {
-            max-height: none;
-            overflow: visible;
+            @include flex($direction: column, $gap: 3.2rem);
             max-width: 270px;
         }
 
@@ -174,10 +174,6 @@
             margin-top: 2.8rem;
             gap: 2.5rem;
         }
-    }
-
-    &__links-list[hidden] {
-        display: none;
     }
 
     &__link {

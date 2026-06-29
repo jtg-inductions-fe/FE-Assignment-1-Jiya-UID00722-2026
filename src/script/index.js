@@ -88,6 +88,8 @@ const closeBtn = document.getElementById("closeBtn");
 function toggleMenu() {
   const isOpen = navMenu.classList.toggle('navigation__menu--open');
 
+  navMenu.hidden = !isOpen;
+
   hamburger.setAttribute('aria-expanded', isOpen);
 
   if (isOpen) {
@@ -181,49 +183,16 @@ customersCount.innerText = "2k+";
  * @type {HTMLCollectionOf<Element>}
  */
 
-const acc = document.getElementsByClassName("footer__links-title");
+const acc = document.querySelectorAll(".footer__links-title");
 
-console.log(acc);
+acc.forEach(button => {
+  button.addEventListener("click", () => {
+    const isOpen = button.classList.toggle("footer__links-title--active");
 
-/**
- * Attaches click handlers to each accordion toggle
- */
-if (window.innerWidth < 768) {
-for (let i = 0; i < acc.length; i++) {
+    const panel = button.nextElementSibling;
 
-  // Hide all panels initially
-  const panel = acc[i].nextElementSibling;
-  panel.hidden = true;
-
-  /**
-   * Toggles the accordion panel when its heading is clicked
-   *
-   * @listens click
-   * @returns {void}
-   */
-
-  acc[i].addEventListener("click", function () {
-
-    // Toggle active state on the accordion heading
-
-    this.classList.toggle("footer__links-title--active");
-
-    /**
-    * The content panel associated with the clicked accordion heading
-    *
-    * @type {HTMLElement}
-    */
-
-    const panel = this.nextElementSibling;
-
-    const expanded = this.getAttribute("aria-expanded") === "true";
-
-    this.setAttribute("aria-expanded", !expanded);
-
-    // Collapse the panel if it is open; otherwise expand it
-
-    panel.hidden = expanded;
-      panel.style.maxHeight = expanded ? null : panel.scrollHeight + "px";  
+    button.setAttribute("aria-expanded", String(isOpen));
+    panel.hidden = !isOpen;
+    panel.classList.toggle("footer__links-list--open", isOpen);
   });
-}
-}
+});
