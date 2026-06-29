@@ -1,135 +1,41 @@
-/**
- * Initializes the Embla carousel and configures navigation controls
- *
- */
-
 import EmblaCarousel from 'embla-carousel'
-
-/**
- * The main carousel wrapper element
- *
- * @type {HTMLElement|null}
- */
-
-const wrapperNode = document.querySelector('.embla');
-
-/**
- * The carousel viewport element where slides are displayed
- *
- * @type {HTMLElement|null}
- */
-
-const viewportNode = wrapperNode.querySelector('.embla__viewport');
-
-/**
- * The previous slide navigation button
- *
- * @type {HTMLElement|null}
- */
-
-const prevButtonNode = wrapperNode.querySelector('.embla__prev');
-
-/**
- * The next slide navigation button
- *
- * @type {HTMLElement|null}
- */
-
-const nextButtonNode = wrapperNode.querySelector('.embla__next');
-
-/**
- * Embla carousel instance
- *
- * @type {Object}
- */
-
-const emblaApi = EmblaCarousel(viewportNode, { loop: true });
-
-/**
- * Navigates to the previous carousel slide when clicked
- *
- * @event click
- */
-
-prevButtonNode.addEventListener('click', () => emblaApi.scrollPrev(), false);
-
-/**
- * Navigates to the next carousel slide when clicked
- *
- * @event click
- */
-
-nextButtonNode.addEventListener('click', () => emblaApi.scrollNext(), false);
 
 /**
  * Adds pagination dot buttons to the carousel and manages their active state
  *
  * @param {Object} emblaApi - Embla carousel API instance
  * @param {HTMLElement} dotsNode - Container element for pagination dots
- *
- * @returns {void}
  */
-
 export const addDotButtonAndClickHandlers = (emblaApi, dotsNode) => {
-
-  /**
-   * Collection of generated dot button elements
-   *
-   * @type {HTMLElement[]}
-   */
-
-  let dotNodes = [];
-
-  /**
-  * Creates pagination dot buttons and assigns click handlers
-  *
-  * @returns {void}
-  */
+  let dotNodes = []
 
   const addDotBtnsWithClickHandlers = () => {
     dotsNode.innerHTML = emblaApi
       .scrollSnapList()
       .map(() => '<button class="embla__dot" type="button"></button>')
-      .join('');
-
-    /**
-   * Scrolls carousel to the selected slide
-   *
-   * @param {number} index - Target slide index
-   *
-   * @returns {void}
-   */
+      .join('')
 
     const scrollTo = (index) => {
-      emblaApi.scrollTo(index);
+      emblaApi.scrollTo(index)
     }
 
     dotNodes = Array.from(dotsNode.querySelectorAll('.embla__dot'))
+
     dotNodes.forEach((dotNode, index) => {
       dotNode.addEventListener('click', () => scrollTo(index), false)
     })
   }
 
-  /**
-   * Updates the active pagination dot based on the current carousel slide
-   *
-   * @returns {void}
-   */
-
   const toggleDotButtonsActive = () => {
-    const previous = emblaApi.previousScrollSnap();
-    const selected = emblaApi.selectedScrollSnap();
-    dotNodes[previous].classList.remove('embla__dot--selected');
-    dotNodes[selected].classList.add('embla__dot--selected');
+    const previous = emblaApi.previousScrollSnap()
+    const selected = emblaApi.selectedScrollSnap()
+
+    dotNodes[previous]?.classList.remove('embla__dot--selected')
+    dotNodes[selected]?.classList.add('embla__dot--selected')
   }
 
-  addDotBtnsWithClickHandlers();
-  toggleDotButtonsActive();
-
-  /**
-  * Updates pagination state when the carousel is reinitialized
-  * or when the active slide changes
-  */
+  addDotBtnsWithClickHandlers()
+  toggleDotButtonsActive()
 
   emblaApi
     .on('reInit', addDotBtnsWithClickHandlers)
@@ -138,18 +44,35 @@ export const addDotButtonAndClickHandlers = (emblaApi, dotsNode) => {
 }
 
 /**
- * Container element for carousel pagination dots
+ * Initializes a single Embla carousel
  *
- * @type {HTMLElement|null}
+ * @param {HTMLElement} wrapperNode - The carousel wrapper element
+ * @returns {Object} Embla API instance
  */
+const initEmbla = (wrapperNode) => {
+  const viewportNode = wrapperNode.querySelector('.embla__viewport')
+  const prevButtonNode = wrapperNode.querySelector('.embla__prev')
+  const nextButtonNode = wrapperNode.querySelector('.embla__next')
+  const dotsNode = wrapperNode.querySelector('.embla__dots')
 
-const dotsNode = document.querySelector('.embla__dots');
+  const emblaApi = EmblaCarousel(viewportNode, {
+    loop: true
+  })
+
+  prevButtonNode?.addEventListener('click', () => emblaApi.scrollPrev(), false)
+  nextButtonNode?.addEventListener('click', () => emblaApi.scrollNext(), false)
+
+  if (dotsNode) {
+    addDotButtonAndClickHandlers(emblaApi, dotsNode)
+  }
+
+  return emblaApi
+}
 
 /**
- * Initializes carousel pagination controls
+ * Initialize all Embla carousels on the page
  */
-
-addDotButtonAndClickHandlers(emblaApi, dotsNode);
+document.querySelectorAll('.embla').forEach(initEmbla)
 
 // Logic for Hamburger
 
