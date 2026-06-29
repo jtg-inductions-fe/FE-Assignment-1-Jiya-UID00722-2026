@@ -3,8 +3,3 @@
 body {
     @include text(1rem, 400, 1.5, $font-primary);
 }
-
-p {
-    margin-bottom: 1rem;
-}
-

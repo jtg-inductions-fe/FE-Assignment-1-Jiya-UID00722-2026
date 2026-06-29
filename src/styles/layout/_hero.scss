@@ -1,0 +1,311 @@
+@use '../abstracts/' as *;
+
+.hero {
+    @include flex($direction: column-reverse);
+    padding: 2.8rem 1.5rem;
+    @include container;
+
+    &__content {
+        @include flex(column, center, center, 2rem);
+        position: relative;
+        top: -111px;
+        padding: 4rem 0.85rem 0 0.85rem;
+
+        @include media-up(sm) {
+            top: -17.8rem;
+            gap: 2.5rem;
+        }
+
+        @include media-up(lg) {
+            top: -18rem;
+            flex: 6;
+            align-items: flex-start;
+            margin-top: 10rem;
+            gap: 4rem;
+        }
+    }
+
+    &__badge {
+        @include shadow-2xl;
+        color: $secondary-color;
+        font-weight: $font-weight-700;
+        @include flex(row, center, center, 1.6rem);
+        font-size: 1.3rem;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__badge-text {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    &__badge-icon {
+        font-size: 2rem;
+    }
+
+    &__title {
+        line-height: normal;
+        font-size: 3.8rem;
+        font-weight: $font-weight-700;
+        text-align: center;
+
+        &--highlight {
+            color: $secondary-color;
+        }
+
+        @include media-up(sm) {
+            font-size: 5.8rem;
+            margin-top: 2.8rem;
+        }
+
+        @include media-up(lg) {
+            text-align: left;
+            font-size: 7rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.65rem;
+        text-align: center;
+        margin-top: 0.5rem;
+
+        @include media-up(sm) {
+            font-size: 2rem;
+        }
+
+        @include media-up(lg) {
+            margin-top: 0;
+            text-align: left;
+        }
+    }
+
+    &__actions {
+        @include flex($direction: column, $gap: 2.8rem);
+        width: 100%;
+        margin-top: 1.3rem;
+
+        @include media-up(sm) {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.6rem;
+        }
+
+        @include media-up(lg) {
+            justify-content: flex-start;
+            margin-top: 0;
+        }
+    }
+
+    &__action {
+        width: 100%;
+        padding: 2.4rem 3.2rem;
+        font-size: 1.4rem;
+        @include flex(row, center, center, 1rem);
+
+        &--first {
+            @include shadow-xl;
+        }
+
+        &--second {
+            border: 1px solid $light-background-color;
+        }
+
+        @include media-up(sm) {
+            width: auto;
+            padding: 1.6rem 3.2rem;
+        }
+    }
+
+    &__play-icon {
+        font-size: 2rem;
+        color: $primary-color;
+    }
+
+    &__media {
+        @include flex($direction: column, $align: center);
+
+        @include media-up(lg) {
+            flex: 11;
+        }
+    }
+
+    &__bg {
+        width: 100%;
+    }
+
+    &__bg-img {
+        width: 100%;
+    }
+
+    &__gallery {
+        display: flex;
+        width: 75%;
+        gap: 2.6rem;
+        position: relative;
+        top: -11.8rem;
+
+        @include media-up(sm) {
+            top: -21.8rem;
+        }
+    }
+
+    &__card {
+        flex: 1;
+        @include flex-center;
+
+        &--left {
+            @include flex($direction: column, $gap: 1.6rem);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__icon {
+        border-radius: 50%;
+        position: absolute;
+        @include shadow-sm;
+        font-size: 1.5rem;
+        width: 3.6rem;
+        height: 3.6rem;
+        @include flex-center;
+        color: $background-color;
+
+        &--telegram {
+            background-color: $secondary-color;
+            top: 42%;
+            left: -1.6rem;
+
+            @include media-up(sm) {
+                left: -4.2rem;
+            }
+        }
+
+        &--contact {
+            background-color: $orange-color;
+            bottom: -1.5rem;
+            left: 65%;
+        }
+
+        @include media-up(sm) {
+            width: 6.4rem;
+            height: 6.4rem;
+            font-size: 2.5rem;
+        }
+    }
+
+    &__tag {
+        position: absolute;
+        bottom: 27%;
+        right: -14%;
+        padding: 0.8rem 1.6rem;
+        @include flex-center;
+        gap: 0.4rem;
+        font-weight: $font-weight-700;
+        @include shadow-sm;
+        border-radius: 50px;
+        background-color: $background-color;
+        font-size: 1rem;
+
+        @include media-up(sm) {
+            right: -13%;
+            bottom: 26%;
+            font-size: 1.4rem;
+            padding: 1.6rem 3.2rem;
+            gap: 8px;
+        }
+    }
+
+    &__tag-icon {
+        @include media-up(sm) {
+            font-size: 2rem;
+            color: $yellow-color;
+        }
+    }
+
+    &__text-break {
+        display: inline;
+
+        @include media-up(sm) {
+            display: block;
+        }
+    }
+
+    &__arrows {
+        display: none;
+
+        @include media-up(sm) {
+            display: block;
+            position: absolute;
+            bottom: 9%;
+            left: -3%;
+        }
+
+        @include media-up(lg) {
+            bottom: 8%;
+            left: -7%;
+        }
+    }
+
+    &__arrows-img {
+        @include media-up(sm) {
+            width: 65px;
+            height: auto;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+
+        top: -150px;
+        left: -150px;
+
+        width: 500px;
+        height: 500px;
+
+        background: radial-gradient(circle,
+                rgba(255, 87, 34, 0.5),
+                transparent 80%);
+
+        filter: blur(150px);
+        pointer-events: none;
+        z-index: $z-index-m1;
+
+        @include media-up(sm) {
+            content: "";
+            position: absolute;
+
+            top: -500px;
+            left: -500px;
+
+            width: 1000px;
+            height: 1000px;
+
+            background: radial-gradient(circle,
+                    rgba(255, 87, 34, 0.5),
+                    transparent 80%);
+
+            filter: blur(150px);
+            pointer-events: none;
+        }
+    }
+
+    @include media-up(sm) {
+        padding: 6.4rem 6.4rem 0 6.4rem;
+        position: relative;
+    }
+
+    @include media-up(lg) {
+        flex-direction: row;
+        padding: 2.4rem 0 0 0;
+    }
+}
