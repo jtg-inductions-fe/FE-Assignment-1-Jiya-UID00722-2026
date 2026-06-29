@@ -86,20 +86,20 @@ const closeBtn = document.getElementById("closeBtn");
  */
 
 function toggleMenu() {
-  const isOpen = navMenu.classList.toggle('navigation__menu--open');
+    const isOpen = navMenu.classList.toggle('navigation__menu--open');
 
-  navMenu.hidden = !isOpen;
+    navMenu.hidden = !isOpen;
 
-  hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
 
-  if (isOpen) {
-    // Move focus to first menu item
-    closeBtn.focus();
-  }
-  if (!isOpen) {
-    // Move focus back to hamburger button
-    hamburger.focus();
-  }
+    if (isOpen) {
+        // Move focus to first menu item
+        closeBtn.focus();
+    }
+    if (!isOpen) {
+        // Move focus back to hamburger button
+        hamburger.focus();
+    }
 }
 
 hamburger.addEventListener('click', toggleMenu);
