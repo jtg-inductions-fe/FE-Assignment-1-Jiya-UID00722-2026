@@ -1,3 +1,81 @@
+import EmblaCarousel from 'embla-carousel'
+
+/**
+ * Adds pagination dot buttons to the carousel and manages their active state
+ *
+ * @param {Object} emblaApi - Embla carousel API instance
+ * @param {HTMLElement} dotsNode - Container element for pagination dots
+ */
+export const addDotButtonAndClickHandlers = (emblaApi, dotsNode) => {
+  let dotNodes = []
+
+  const addDotBtnsWithClickHandlers = () => {
+    dotsNode.innerHTML = emblaApi
+      .scrollSnapList()
+      .map(() => '<button class="embla__dot" type="button"></button>')
+      .join('')
+
+    const scrollTo = (index) => {
+      emblaApi.scrollTo(index)
+    }
+
+    dotNodes = Array.from(dotsNode.querySelectorAll('.embla__dot'))
+
+    dotNodes.forEach((dotNode, index) => {
+      dotNode.addEventListener('click', () => scrollTo(index), false)
+    })
+  }
+
+  const toggleDotButtonsActive = () => {
+    const previous = emblaApi.previousScrollSnap()
+    const selected = emblaApi.selectedScrollSnap()
+
+    dotNodes[previous]?.classList.remove('embla__dot--selected')
+    dotNodes[selected]?.classList.add('embla__dot--selected')
+  }
+
+  addDotBtnsWithClickHandlers()
+  toggleDotButtonsActive()
+
+  emblaApi
+    .on('reInit', addDotBtnsWithClickHandlers)
+    .on('reInit', toggleDotButtonsActive)
+    .on('select', toggleDotButtonsActive)
+}
+
+/**
+ * Initializes a single Embla carousel
+ *
+ * @param {HTMLElement} wrapperNode - The carousel wrapper element
+ * @returns {Object} Embla API instance
+ */
+const initEmbla = (wrapperNode) => {
+  const viewportNode = wrapperNode.querySelector('.embla__viewport')
+  const prevButtonNode = wrapperNode.querySelector('.embla__prev')
+  const nextButtonNode = wrapperNode.querySelector('.embla__next')
+  const dotsNode = wrapperNode.querySelector('.embla__dots')
+
+  const emblaApi = EmblaCarousel(viewportNode, {
+    loop: true
+  })
+
+  prevButtonNode?.addEventListener('click', () => emblaApi.scrollPrev(), false)
+  nextButtonNode?.addEventListener('click', () => emblaApi.scrollNext(), false)
+
+  if (dotsNode) {
+    addDotButtonAndClickHandlers(emblaApi, dotsNode)
+  }
+
+  return emblaApi
+}
+
+/**
+ * Initialize all Embla carousels on the page
+ */
+document.querySelectorAll('.embla').forEach(initEmbla)
+
+// Logic for Hamburger
+
 const hamburger = document.getElementById('hamburgerBtn');
 const navMenu = document.getElementById('navMenu');
 const closeBtn = document.getElementById("closeBtn");
@@ -35,11 +113,11 @@ closeBtn.addEventListener("click", toggleMenu);
  */
 
 navMenu.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        e.preventDefault();
-        toggleMenu();
-        hamburger.focus();
-    }
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    toggleMenu();
+    hamburger.focus();
+  }
 });
 
 /**

@@ -1,0 +1,102 @@
+@use '../abstracts/' as *;
+
+.testimonial {
+    @include flex(column, center, center, 3rem);
+    padding: 8.6rem 0;
+
+    &__headings {
+        @include flex(column, center, center, 1.6rem);
+    }
+
+    &__card {
+        @include flex(column, center, center, 3.6rem);
+        padding: 3rem 0;
+
+        @include media-up(sm) {
+            padding: 2.2rem 0;
+            gap: 4rem;
+        }
+
+        @include media-up(lg) {
+            padding: 2.7rem 0;
+            gap: 3.8rem;
+        }
+    }
+
+    &__user-details {
+        @include flex(column, center, center, 7.5rem);
+
+        @include media-up(sm) {
+            gap: 7rem;
+        }
+    }
+
+    &__user-review {
+        @include flex(column, center, center, 7rem);
+
+        @include media-up(sm) {
+            gap: 6rem;
+        }
+    }
+
+    &__image {
+        width: 128px;
+        height: 128px;
+    }
+
+    &__username {
+        line-height: 120%;
+        font-weight: $font-weight-700;
+    }
+
+    &__name {
+        font-size: 2.8rem;
+        color: $orange-color;
+    }
+
+    &__role {
+        font-size: 2.3rem;
+        color: $text-600;
+    }
+
+    &__stars {
+        @include flex(row, center, center, 1.8rem);
+        color: $yellow-color;
+        font-size: 2.5rem;
+
+        @include media-up(lg) {
+            font-size: 2.6rem;
+            gap: 1.8rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        text-align: center;
+        color: $text-600;
+        max-width: 90%;
+
+        @include media-up(sm) {
+            font-size: 2.3rem;
+            max-width: 60%;
+        }
+
+        @include media-up(lg) {
+            max-width: 62%;
+        }
+    }
+
+    @include media-up(sm) {
+        padding: 1.2rem 0;
+        background-image: url("/assets/images/testimonials/testimonial-bg.png");
+        background-size: cover;
+        background-position: center 48%;
+        background-repeat: no-repeat;
+    }
+
+    @include media-up(lg) {
+        padding: 9.7rem 0;
+        background-position: center 34%;
+        gap: 2.2rem;
+    }
+}
