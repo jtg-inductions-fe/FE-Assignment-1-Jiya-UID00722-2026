@@ -339,7 +339,8 @@
     <section class="special-deals">
         <!-- Modal 1 -->
         <div id="modal1" class="special-deals__modal">
-            <div class="special-deals__content">
+            <!-- Screen 1 -->
+            <div id="screen1" class="special-deals__content">
                 <div class="special-deals__header">
                     <i class="fas fa-gift special-deals__icon"></i>
                     <h2 class="special-deals__title"> SPECIAL DEALS</h2>
@@ -349,14 +350,52 @@
                     Tap the center of the wheel to spin
                 </p>
 
-                <button class="" id="nextBtn">Next</button>
-                <button class="special-deals__btn--close closeBtn"><i class="fas fa-times"></i></button>
-            </div>
-        </div>
+                <div class="special-deals__wrapper">
+                    <div id="loading" class="special-deals__wheel-container">
+                        <div class="special-deals__wheel special-deals__wheel--loading">
+                            <p class="special-deals__loading-text">Loading...</p>
+                        </div>
+                        <div class="special-deals__pointer special-deals__pointer--loading"></div>
+                    </div>
+                    <div id="content" class="special-deals__wrapper">
 
-        <!-- Modal 2 -->
-        <div id="modal2" class="special-deals__modal">
-            <div class="special-deals__content">
+                        <div class="special-deals__wheel-container">
+
+                            <div class="special-deals__pointer"></div>
+
+                            <div class="special-deals__wheel" id="wheel">
+                            </div>
+
+                            <button class="special-deals__spin-btn" id="spin">Spin</button>
+
+                        </div>
+
+                        <div class="special-deals__result">
+                            <p class="special-deals__message">You won!</p>
+                            <div class="special-deals__card">
+                                <div class="special-deals__card-left">
+                                    <p class="special-deals__discount">20% Off Flights</p>
+                                    <p class="special-deals__expiry">Expires in 7d</p>
+                                </div>
+                                <div class="special-deals__card-right">
+                                    <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                                    <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn--muted special-deals__view-deals-btn" id="nextBtn">View All Unlocked
+                            Deals
+                            <span class="special-deals__count">2</span>
+                        </button>
+                    </div>
+
+                </div>
+                <button class="special-deals__close-btn closeBtn"><i class="fas fa-times"></i></button>
+            </div>
+
+            <!-- Screen 2 -->
+             <div id="screen2" class="special-deals__content special-deals__hidden">
                 <div class="special-deals__header">
                     <i class="fas fa-gift special-deals__icon"></i>
                     <h2 class="special-deals__title">SPECIAL DEALS</h2>
@@ -366,10 +405,44 @@
                     All the deals you&apos;ve unlocked yet!
                 </p>
 
-                <button id="prevBtn">Previous</button>
-                <button class="special-deals__btn--close closeBtn"><i class="fas fa-times"></i></button>
+                <div class="special-deals__unlocked-cards">
+                    <div class="special-deals__card">
+                        <div class="special-deals__card-left">
+                            <p class="special-deals__discount">20% Off Flights</p>
+                            <p class="special-deals__expiry">Expires in 7d</p>
+                        </div>
+                        <div class="special-deals__card-right">
+                            <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                            <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
+                        </div>
+                    </div>
+                    <div class="special-deals__card">
+                        <div class="special-deals__card-left">
+                            <p class="special-deals__discount">20% Off Flights</p>
+                            <p class="special-deals__expiry">Expires in 7d</p>
+                        </div>
+                        <div class="special-deals__card-right">
+                            <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                            <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
+                        </div>
+                    </div>
+                    <div class="special-deals__card special-deals__card--expired">
+                        <div class="special-deals__card-left">
+                            <p class="special-deals__discount">20% Off Flights</p>
+                            <p class="special-deals__expiry special-deals__expiry--expired">Expires in 7d</p>
+                        </div>
+                        <div class="special-deals__card-right">
+                            <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                            <button class="special-deals__copy-button special-deals__copy-button--expired"><i class="far fa-clone"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="prevBtn" class="btn btn--muted special-deals__view-deals-btn">Go Back</button>
+                <button class="special-deals__close-btn closeBtn"><i class="fas fa-times"></i></button>
             </div>
         </div>
+
     </section>
 
     <script type="module" src="./src/script/index.js"></script>
