@@ -30,7 +30,7 @@
                 <li><a class="navigation__link navigation__link--active" href="#" aria-current="page">Home</a>
                 </li>
                 <li><a class="navigation__link" href="#partners">Discover</a></li>
-                <li><a class="navigation__link" href="#travel">Special Deals</a></li>
+                <li><a class="navigation__link" id="openModal" href="">Special Deals</a></li>
                 <li><a class="navigation__link" href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -336,7 +336,45 @@
         </div>
     </footer>
 
+    <section class="special-deals">
+        <!-- Modal 1 -->
+        <div id="modal1" class="special-deals__modal">
+            <div class="special-deals__content">
+                <div class="special-deals__header">
+                    <i class="fas fa-gift special-deals__icon"></i>
+                    <h2 class="special-deals__title"> SPECIAL DEALS</h2>
+                </div>
+                <p class="special-deals__subtitle">Spin &amp; Win!</p>
+                <p class="special-deals__description">
+                    Tap the center of the wheel to spin
+                </p>
+
+                <button class="" id="nextBtn">Next</button>
+                <button class="special-deals__btn--close closeBtn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div id="modal2" class="special-deals__modal">
+            <div class="special-deals__content">
+                <div class="special-deals__header">
+                    <i class="fas fa-gift special-deals__icon"></i>
+                    <h2 class="special-deals__title">SPECIAL DEALS</h2>
+                </div>
+                <p class="special-deals__subtitle">Unlocked Deals</p>
+                <p class="special-deals__description">
+                    All the deals you&apos;ve unlocked yet!
+                </p>
+
+                <button id="prevBtn">Previous</button>
+                <button class="special-deals__btn--close closeBtn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </section>
+
     <script type="module" src="./src/script/index.js"></script>
+    <script type="module" src="./src/script/deals.js"></script>
+
 </body>
 
 </html>

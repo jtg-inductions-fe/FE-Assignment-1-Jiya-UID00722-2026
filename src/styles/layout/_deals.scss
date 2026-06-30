@@ -1,0 +1,62 @@
+@use '../abstracts/' as *;
+
+.special-deals {
+    &__modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+
+        &--active {
+            display: flex;
+        }
+    }
+
+    &__content {
+        background: white;
+        padding: 20px;
+        border-radius: 24px;
+        width: 300px;
+        position: relative;
+        @include flex(column,center,center,0.8rem);
+    }
+
+    &__header {
+        color: $secondary-color;
+        font-weight: $font-weight-600;
+        @include flex($gap: 1rem);
+    }
+
+    &__icon {
+        font-size: 1.6rem;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        letter-spacing: 10%;
+    }
+
+    &__subtitle {
+        font-size: 2rem;
+        font-weight: $font-weight-700;
+    }
+
+    &__description {
+        color: $grey-color;
+        font-size: 1.2rem;
+        font-weight: $font-weight-400;
+    }
+
+    &__btn {
+        &--close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            border: none;
+            background: transparent;
+        }
+    }
+}
