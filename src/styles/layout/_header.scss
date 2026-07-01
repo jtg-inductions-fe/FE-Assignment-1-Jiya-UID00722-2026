@@ -8,6 +8,17 @@
         order: 1;
         @include flex;
         flex: 1;
+
+        @include media-up(sm) {
+            justify-content: center;
+            order: 2;
+            flex: 1;
+        }
+
+        @include media-up(lg) {
+            order: initial;
+            flex: initial;
+        }
     }
 
     &__logo-link {
@@ -16,6 +27,17 @@
 
     &__actions {
         display: none;
+
+        @include media-up(sm) {
+            order: 3;
+            @include flex($justify: flex-end);
+            flex: 1;
+        }
+
+        @include media-up(lg) {
+            order: initial;
+            flex: none;
+        }
     }
 
     &__actions-btn {
@@ -32,6 +54,16 @@
         @include flex($justify: flex-end);
         order: 2;
         flex: 1;
+
+        @include media-up(sm) {
+            order: 1;
+            justify-content: flex-start;
+            flex: 1;
+        }
+
+        @include media-up(lg) {
+            display: none;
+        }
     }
 
     &__hamburger-btn {
@@ -57,12 +89,29 @@
         gap: 10rem;
         padding: 6rem 4rem 0 0;
         z-index: $z-index-1000;
+
+        &--open {
+            right: 0;
+            @include flex($direction: column, $align: flex-end, $gap: 8rem);
+        }
+
+        @include media-up(lg) {
+            @include flex($direction: column, $align: flex-end);
+            position: static;
+            width: auto;
+            height: auto;
+            background: none;
+            padding: 0;
+        }
     }
 
     &__links {
         @include flex(column, center, flex-end);
         @include list-style-none;
         gap: 7rem;
+        @include media-up(lg){
+            flex-direction: row;
+        }
     }
 
     &__link {
@@ -73,10 +122,25 @@
 
         &--active {
             color: $text-500;
+            @include media-up(lg){
+                color: $text-700;
+            }
         }
 
         &:focus-visible {
             @include focus-visible($background-color);
+            @include media-up(lg){
+                @include focus-visible($primary-color);
+            }
+        }
+
+        @include media-up(lg){
+            color: $text-500;
+            font-size: 1.5rem;
+
+            &:hover {
+                color: $text-700;
+            }
         }
     }
 
@@ -88,102 +152,24 @@
         &:focus-visible {
             @include focus-visible($background-color, 5px);
         }
+        @include media-up(lg){
+            display: none;
+        }
     }
 
-    &__menu--open {
-        right: 0;
-        @include flex($direction: column, $align: flex-end, $gap: 8rem);
-    }
 
     &__logo-link:focus-visible {
         @include focus-visible($primary-color, 3px);
     }
-}
 
-
-/* Tablet */
-@include media-up(sm) {
-
-    .navigation {
+    @include media-up(sm) {
         @include flex(row, space-around, center, 4rem);
         padding: 3.2rem 6.4rem;
-
-        &__actions {
-            order: 3;
-            @include flex($justify: flex-end);
-            flex: 1;
-        }
-
-        &__logo {
-            justify-content: center;
-            order: 2;
-            flex: 1;
-        }
-
-        &__hamburger {
-            order: 1;
-            justify-content: flex-start;
-            flex: 1;
-        }
-
     }
-}
 
-
-/* Desktop */
-@include media-up(lg) {
-
-    .navigation {
+    @include media-up(lg) {
         @include flex(row, space-between, center);
         padding: 7.2rem 0;
         @include container;
-
-        &__logo {
-            order: initial;
-            flex: initial;
-        }
-
-        &__hamburger {
-            display: none;
-        }
-
-        &__actions {
-            order: initial;
-            flex: none;
-        }
-
-        &__menu {
-            @include flex($direction: column, $align: flex-end);
-            position: static;
-            width: auto;
-            height: auto;
-            background: none;
-            padding: 0;
-        }
-
-        &__links {
-            flex-direction: row;
-        }
-
-        &__link {
-            color: $text-500;
-            font-size: 1.5rem;
-
-            &:focus-visible {
-                @include focus-visible($primary-color);
-            }
-
-            &:hover {
-                color: $text-700;
-            }
-
-            &--active {
-                color: $text-700;
-            }
-        }
-
-        &__close-btn {
-            display: none;
-        }
     }
 }
