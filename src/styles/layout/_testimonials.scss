@@ -79,17 +79,17 @@
 
         @include media-up(sm) {
             font-size: 2.3rem;
-            max-width: 60%;
+            max-width: 65%;
         }
 
         @include media-up(lg) {
-            max-width: 62%;
+            max-width: 68%;
         }
     }
 
     @include media-up(sm) {
         padding: 1.2rem 0;
-        background-image: url("/assets/images/testimonials/testimonial-bg.png");
+        background-image: url("/src/assets/images/testimonials/testimonial-bg.png");
         background-size: cover;
         background-position: center 48%;
         background-repeat: no-repeat;
