@@ -351,11 +351,12 @@
                 </p>
 
                 <div class="special-deals__wrapper">
-                    <div id="loading" class="special-deals__wheel-container">
+                    <div id="loading" class="special-deals__wheel-container special-deals__wheel-container--loading">
                         <div class="special-deals__wheel special-deals__wheel--loading">
                             <p class="special-deals__loading-text">Loading...</p>
                         </div>
                         <div class="special-deals__pointer special-deals__pointer--loading"></div>
+                       
                     </div>
                     <div id="content" class="special-deals__wrapper">
 
@@ -371,31 +372,24 @@
                         </div>
 
                         <div class="special-deals__result">
-                            <p class="special-deals__message">You won!</p>
-                            <div class="special-deals__card">
-                                <div class="special-deals__card-left">
-                                    <p class="special-deals__discount">20% Off Flights</p>
-                                    <p class="special-deals__expiry">Expires in 7d</p>
-                                </div>
-                                <div class="special-deals__card-right">
-                                    <div class="special-deals__coupon-code">FLY20-ABCD</div>
-                                    <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
-                                </div>
+                            <p class="special-deals__message"></p>
+                            <div class="special-deals__result-card">
                             </div>
                         </div>
 
-                        <button class="btn btn--muted special-deals__view-deals-btn" id="nextBtn">View All Unlocked
-                            Deals
-                            <span class="special-deals__count">2</span>
-                        </button>
                     </div>
+
+                    <button class="btn btn--muted special-deals__view-deals-btn" id="nextBtn">View All Unlocked
+                            Deals
+                            <span class="special-deals__count">0</span>
+                        </button>
 
                 </div>
                 <button class="special-deals__close-btn closeBtn"><i class="fas fa-times"></i></button>
             </div>
 
             <!-- Screen 2 -->
-             <div id="screen2" class="special-deals__content special-deals__hidden">
+            <div id="screen2" class="special-deals__content special-deals__hidden">
                 <div class="special-deals__header">
                     <i class="fas fa-gift special-deals__icon"></i>
                     <h2 class="special-deals__title">SPECIAL DEALS</h2>
@@ -433,7 +427,8 @@
                         </div>
                         <div class="special-deals__card-right">
                             <div class="special-deals__coupon-code">FLY20-ABCD</div>
-                            <button class="special-deals__copy-button special-deals__copy-button--expired"><i class="far fa-clone"></i></button>
+                            <button class="special-deals__copy-button special-deals__copy-button--expired"><i
+                                    class="far fa-clone"></i></button>
                         </div>
                     </div>
                 </div>
