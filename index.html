@@ -3,19 +3,14 @@
 
 <head>
     <title>Travlog | Travel top destination of the world</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles/main.scss" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/main.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 
 <body>
@@ -167,22 +162,22 @@
                 <h2 class="heading heading--secondary">Trust our clients</h2>
             </div>
 
-            <div class="embla" aria-label="Client testimonials">
+            <div class="embla">
                 <div class="embla__viewport" aria-live="polite">
                     <div class="embla__container">
-                        <div class="embla__slide" aria-label="1 of 3">
+                        <div class="embla__slide" role="group" aria-label="1 of 3">
                             <article class="testimonial__card">
                                 <div class="testimonial__user-details">
                                     <img class="testimonial__image" src="/src/assets/images/testimonials/user.png"
                                         alt="Mark Smith - Travlog User" loading="lazy">
                                     <div class="testimonial__username">
-                                        <span class="testimonial__name">Mark Smith</span>
+                                        <h3 class="testimonial__name">Mark Smith</h3>
                                         <span class="testimonial__role">/ Travel
                                             Enthusiast</span>
                                     </div>
                                 </div>
                                 <div class="testimonial__user-review">
-                                    <div class="testimonial__stars" aria-label="Rating: 5 out of 5 stars">
+                                    <div class="testimonial__stars" role="img" aria-label="Rating: 5 out of 5 stars">
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -196,19 +191,19 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="embla__slide" aria-label="2 of 3">
+                        <div class="embla__slide" role="group" aria-label="2 of 3">
                             <article class="testimonial__card">
                                 <div class="testimonial__user-details">
                                     <img class="testimonial__image" src="/src/assets/images/testimonials/user.png"
                                         alt="Mark Smith - Travlog User" loading="lazy">
                                     <div class="testimonial__username">
-                                        <span class="testimonial__name">Mark Smith</span>
+                                        <h3 class="testimonial__name">Mark Smith</h3>
                                         <span class="testimonial__role">/ Travel
                                             Enthusiast</span>
                                     </div>
                                 </div>
                                 <div class="testimonial__user-review">
-                                    <div class="testimonial__stars" aria-label="Rating: 5 out of 5 stars">
+                                    <div class="testimonial__stars" role="img" aria-label="Rating: 5 out of 5 stars">
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -222,19 +217,19 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="embla__slide" aria-label="3 of 3">
+                        <div class="embla__slide" role="group" aria-label="3 of 3">
                             <article class="testimonial__card">
                                 <div class="testimonial__user-details">
                                     <img class="testimonial__image" src="/src/assets/images/testimonials/user.png"
                                         alt="Mark Smith - Travlog User" loading="lazy">
                                     <div class="testimonial__username">
-                                        <span class="testimonial__name">Mark Smith</span>
+                                        <h3 class="testimonial__name">Mark Smith</h3>
                                         <span class="testimonial__role">/ Travel
                                             Enthusiast</span>
                                     </div>
                                 </div>
                                 <div class="testimonial__user-review">
-                                    <div class="testimonial__stars" aria-label="Rating: 5 out of 5 stars">
+                                    <div class="testimonial__stars" role="img" aria-label="Rating: 5 out of 5 stars">
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -294,10 +289,10 @@
                     </h3>
                     <button class="footer__links-title footer__links-title--mobile" aria-expanded="false"
                         aria-controls="footer-company-links">
-                        <p class="footer__links-title-text">Company</p>
-                        <div class="footer__links-title-icon">
+                        <span class="footer__links-title-text">Company</span>
+                        <span class="footer__links-title-icon">
                             <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
+                        </span>
                     </button>
                     <ul id="footer-company-links" class="footer__links-list" hidden>
                         <li class="footer__links-item"><a class="footer__link" href="#about">About</a></li>
@@ -311,10 +306,10 @@
                     </h3>
                     <button class="footer__links-title footer__links-title--mobile" aria-expanded="false"
                         aria-controls="footer-contact-links">
-                        <p class="footer__links-title-text">Contact</p>
-                        <div class="footer__links-title-icon">
+                        <span class="footer__links-title-text">Contact</span>
+                        <span class="footer__links-title-icon">
                             <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
+                        </span>
                     </button>
                     <ul id="footer-contact-links" class="footer__links-list" hidden>
                         <li class="footer__links-item"><a class="footer__link" href="#about">Why Travlog?</a></li>
@@ -329,10 +324,10 @@
                     </h3>
                     <button class="footer__links-title footer__links-title--mobile" aria-expanded="false"
                         aria-controls="footer-address-links">
-                        <p class="footer__links-title-text">Meet Us</p>
-                        <div class="footer__links-title-icon">
+                        <span class="footer__links-title-text">Meet Us</span>
+                        <span class="footer__links-title-icon">
                             <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </div>
+                        </span>
                     </button>
                     <ul id="footer-address-links" class="footer__links-list" hidden>
                         <li class="footer__links-item"><a class="footer__link" href="tel:+0092123456789">+00 92 1234
