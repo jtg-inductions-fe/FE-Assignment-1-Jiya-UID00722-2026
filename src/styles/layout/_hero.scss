@@ -73,6 +73,8 @@
         font-size: 1.65rem;
         text-align: center;
         margin-top: 0.5rem;
+        color: $text-500;
+        font-family: $font-secondary;
 
         @include media-up(sm) {
             font-size: 2rem;
