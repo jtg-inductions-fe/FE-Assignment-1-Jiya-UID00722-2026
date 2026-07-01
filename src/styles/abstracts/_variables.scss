@@ -1,22 +1,24 @@
-$primary-color:#5D50C6;
-$secondary-color:#F85E9F;
-$orange-color:#FF5722;
-$yellow-color:#FACD49;
-$background-color:#FFFFFF;
-$light-background-color:#EEEEEE;
+$primary-color: #5d50c6;
+$secondary-color: #f85e9f;
+$orange-color: #ff5722;
+$yellow-color: #facd49;
+$background-color: #ffffff;
+$light-background-color: #eeeeee;
 $text-900: #000000;
 $text-800: #191825;
 $text-700: #222831;
-$text-600: #191825BF;
+$text-600: #191825bf;
 $text-500: #19182580;
-$text-400: #1918251A;
-$text-300: #1918250D;
-$font-primary: "Circular Std";
-$font-secondary: "Inter";
+$text-400: #1918251a;
+$text-300: #1918250d;
+$font-primary: 'Circular Std';
+$font-secondary: 'Inter';
+$font-awesome: 'Font Awesome 5 Free';
+$font-awesome-brands: 'Font Awesome 5 Brands';
 $breakpoints: (
     sm: 431px,
     lg: 1025px,
-    xxl: 1200px
+    xxl: 1200px,
 );
 $font-weight-100: 100;
 $font-weight-200: 200;
@@ -34,4 +36,18 @@ $z-index-10: 10;
 $z-index-100: 100;
 $z-index-1000: 1000;
 $z-index-9999: 9999;
-$font-base-url: "/src/assets/fonts";
+$font-base-url: '/src/assets/fonts';
+$fa-paper-plane: '\f1d8';
+$fa-user-plus: '\f234';
+$fa-times: '\f00d';
+$fa-bars: '\f0c9';
+$fa-arrow-left: '\f060';
+$fa-arrow-right: '\f061';
+$fa-facebook-f: '\f39e';
+$fa-twitter: '\f099';
+$fa-instagram: '\f16d';
+$fa-briefcase: '\f0b1';
+$fa-play-circle: '\f144';
+$fa-map-marker-alt: '\f3c5';
+$fa-star: '\f005';
+$fa-angle-down: '\f107';
