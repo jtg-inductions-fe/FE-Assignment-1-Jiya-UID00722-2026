@@ -26,6 +26,7 @@
 
         @include media-up(lg) {
             width: calc(100% + (50vw - 596.325px));
+            max-width: 1200px;
             margin-left: clamp(-390px, calc(596.325px - 50vw), -24px);
         }
     }
