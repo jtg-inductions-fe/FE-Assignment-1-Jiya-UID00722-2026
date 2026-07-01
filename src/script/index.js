@@ -85,7 +85,7 @@ const closeBtn = document.getElementById("closeBtn");
  * @returns {void}
  */
 
-function toggleMenu() {
+const toggleMenu = () => {
     const isOpen = navMenu.classList.toggle('navigation__menu--open');
 
     navMenu.hidden = !isOpen;
@@ -100,7 +100,7 @@ function toggleMenu() {
         // Move focus back to hamburger button
         hamburger.focus();
     }
-}
+};
 
 hamburger.addEventListener('click', toggleMenu);
 
