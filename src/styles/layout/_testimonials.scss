@@ -47,6 +47,7 @@
     &__username {
         line-height: 120%;
         font-weight: $font-weight-700;
+        text-align: center;
     }
 
     &__name {
@@ -85,6 +86,11 @@
         @include media-up(lg) {
             max-width: 68%;
         }
+    }
+
+    &__carousel {
+        @include container;
+        width: 100%;
     }
 
     @include media-up(sm) {
