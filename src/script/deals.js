@@ -50,6 +50,11 @@ closeBtns.forEach(btn => {
     });
 });
 
+modal1.addEventListener("close", () => {
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+});
+
 modal1.addEventListener("click", (e) => {
   if (e.target === modal1) modal1.close();
 });
