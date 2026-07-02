@@ -18,8 +18,7 @@ function hideModal(modal) {
 // Open first modal
 openModal.addEventListener("click", (e) => {
     e.preventDefault(); // Prevent page reload
-    console.log("clicked");
-    showModal(modal1);
+    modal1.showModal();
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 });
@@ -39,7 +38,7 @@ prevBtn.addEventListener("click", () => {
 // Close any open modal
 closeBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        hideModal(modal1);
+        modal1.close();
 
         screen2.classList.add("special-deals__hidden");
         screen1.classList.remove("special-deals__hidden");
@@ -47,6 +46,10 @@ closeBtns.forEach(btn => {
         document.body.style.overflow = "";
         document.documentElement.style.overflow = "";
     });
+});
+
+modal1.addEventListener("click", (e) => {
+  if (e.target === modal1) modal1.close();
 });
 
 const loading = document.getElementById("loading");
