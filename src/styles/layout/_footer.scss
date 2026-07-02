@@ -88,6 +88,7 @@
 
     &__links {
         @include flex($direction: column, $gap: 4.6rem);
+        font-family: $font-secondary;
 
         @include media-up(sm) {
             flex-direction: row;

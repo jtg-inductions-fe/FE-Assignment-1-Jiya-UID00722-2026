@@ -73,6 +73,8 @@
         font-size: 1.65rem;
         text-align: center;
         margin-top: 0.5rem;
+        color: $text-500;
+        font-family: $font-secondary;
 
         @include media-up(sm) {
             font-size: 2rem;
@@ -225,9 +227,10 @@
     }
 
     &__tag-icon {
+        color: $yellow-color;
+        font-size: 1rem;
         @include media-up(sm) {
             font-size: 2rem;
-            color: $yellow-color;
         }
     }
 
@@ -263,7 +266,7 @@
     }
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
 
         top: -150px;
@@ -272,16 +275,18 @@
         width: 500px;
         height: 500px;
 
-        background: radial-gradient(circle,
-                rgba(255, 87, 34, 0.5),
-                transparent 80%);
+        background: radial-gradient(
+            circle,
+            rgba(255, 87, 34, 0.5),
+            transparent 80%
+        );
 
         filter: blur(150px);
         pointer-events: none;
         z-index: $z-index-m1;
 
         @include media-up(sm) {
-            content: "";
+            content: '';
             position: absolute;
 
             top: -500px;
@@ -290,9 +295,11 @@
             width: 1000px;
             height: 1000px;
 
-            background: radial-gradient(circle,
-                    rgba(255, 87, 34, 0.5),
-                    transparent 80%);
+            background: radial-gradient(
+                circle,
+                rgba(255, 87, 34, 0.5),
+                transparent 80%
+            );
 
             filter: blur(150px);
             pointer-events: none;

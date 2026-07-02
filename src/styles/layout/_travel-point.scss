@@ -26,6 +26,7 @@
 
         @include media-up(lg) {
             width: calc(100% + (50vw - 596.325px));
+            max-width: 1200px;
             margin-left: clamp(-390px, calc(596.325px - 50vw), -24px);
         }
     }
@@ -68,6 +69,7 @@
         text-align: center;
         margin-top: 1.6rem;
         color: $text-500;
+        font-family: $font-secondary;
 
         @include media-up(sm) {
             font-size: 1.8rem;
@@ -118,6 +120,7 @@
         font-size: 1.8rem;
         color: $text-800;
         text-align: center;
+        font-family: $font-secondary;
     }
 
     &__ticket-icon {

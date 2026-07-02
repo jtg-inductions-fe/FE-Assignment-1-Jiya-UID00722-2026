@@ -41,11 +41,7 @@
         left: 4%;
 
         @include media-up(sm) {
-            left: 6%;
-        }
-
-        @include media-up(lg) {
-            left: 9%;
+            left: 0;
         }
     }
 
@@ -53,11 +49,7 @@
         right: 4%;
 
         @include media-up(sm) {
-            right: 6%;
-        }
-
-        @include media-up(lg) {
-            right: 9%;
+            right: 0;
         }
     }
 

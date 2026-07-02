@@ -47,11 +47,13 @@
     &__username {
         line-height: 120%;
         font-weight: $font-weight-700;
+        text-align: center;
     }
 
     &__name {
         font-size: 2.8rem;
         color: $orange-color;
+        display: inline;
     }
 
     &__role {
@@ -78,17 +80,22 @@
 
         @include media-up(sm) {
             font-size: 2.3rem;
-            max-width: 60%;
+            max-width: 65%;
         }
 
         @include media-up(lg) {
-            max-width: 62%;
+            max-width: 68%;
         }
+    }
+
+    &__carousel {
+        @include container;
+        width: 100%;
     }
 
     @include media-up(sm) {
         padding: 1.2rem 0;
-        background-image: url("/assets/images/testimonials/testimonial-bg.png");
+        background-image: url('#{$images-base-url}/testimonials/testimonial-bg.png');
         background-size: cover;
         background-position: center 48%;
         background-repeat: no-repeat;

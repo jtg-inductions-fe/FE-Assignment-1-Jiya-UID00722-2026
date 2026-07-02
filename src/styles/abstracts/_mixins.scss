@@ -110,3 +110,12 @@
         max-width: min(1192.65px, calc(100% - 48px));
     }
 }
+
+@mixin font-face($family, $file, $weight, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url("#{$font-base-url}/#{$file}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

@@ -1,29 +1,8 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
-@font-face {
-  font-family: $font-primary;
-  src: url("#{$font-base-url}/CircularStd-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: $font-primary;
-  src: url("#{$font-base-url}/CircularStd-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: $font-primary;
-  src: url("#{$font-base-url}/CircularStd-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: $font-primary;
-  src: url("#{$font-base-url}/CircularStd-Book.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
+@include font-face($font-primary, "CircularStd-Black", 900);
+@include font-face($font-primary, "CircularStd-Bold", 700);
+@include font-face($font-primary, "CircularStd-Medium", 500);
+@include font-face($font-primary, "CircularStd-Book", 400);
+@include font-face($font-secondary, "Inter-Regular", 400);

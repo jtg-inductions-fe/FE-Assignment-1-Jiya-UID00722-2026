@@ -38,7 +38,7 @@
         "**/*.js": [
             "eslint --max-warnings=0"
         ],
-        "**/*.{html,scss,json}": "prettier --check"
+        "**/*.{html,scss,json}": "prettier --write --ignore-unknown"
     },
     "dependencies": {
         "embla-carousel": "^8.6.0"
