@@ -30,7 +30,7 @@
                 <li><a class="navigation__link navigation__link--active" href="#" aria-current="page">Home</a>
                 </li>
                 <li><a class="navigation__link" href="#partners">Discover</a></li>
-                <li><a class="navigation__link" href="#travel">Special Deals</a></li>
+                <li><a class="navigation__link" id="openModal" href="">Special Deals</a></li>
                 <li><a class="navigation__link" href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -336,7 +336,118 @@
         </div>
     </footer>
 
+    <section class="special-deals">
+        <!-- Modal 1 -->
+        <dialog id="modal1" class="modal">
+            <!-- Screen 1 -->
+            <div id="screen1" class="modal__content">
+                <div class="modal__header">
+                    <i class="fas fa-gift special-deals__icon"></i>
+                    <h2 class="special-deals__title"> SPECIAL DEALS</h2>
+                </div>
+                <p class="special-deals__subtitle">Spin &amp; Win!</p>
+                <p class="special-deals__description">
+                    Tap the center of the wheel to spin
+                </p>
+
+                <div class="special-deals__wrapper">
+                    <div id="loading" class="wheel__container">
+                        <div class="wheel wheel--loading">
+                            <p class="special-deals__loading-text">Loading...</p>
+                        </div>
+                        <div class="wheel__pointer wheel__pointer--loading"></div>
+                    </div>
+                    <div id="content" class="special-deals__wrapper">
+
+                        <div class="wheel__container">
+
+                            <div class="wheel__pointer"></div>
+
+                            <div class="wheel" id="wheel">
+                            </div>
+
+                            <button class="wheel__spin-btn" id="spin">Spin</button>
+
+                        </div>
+
+                        <div class="special-deals__result">
+                            <p class="special-deals__message">You won!</p>
+                            <div class="special-deals__card">
+                                <div class="special-deals__card-left">
+                                    <p class="special-deals__discount">20% Off Flights</p>
+                                    <p class="special-deals__expiry">Expires in 7d</p>
+                                </div>
+                                <div class="special-deals__card-right">
+                                    <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                                    <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn--muted special-deals__view-deals-btn" id="nextBtn">View All Unlocked
+                            Deals
+                            <span class="special-deals__count">2</span>
+                        </button>
+                    </div>
+
+                </div>
+                <button class="modal__close-btn closeBtn"><i class="fas fa-times"></i></button>
+            </div>
+
+            <!-- Screen 2 -->
+             <div id="screen2" class="modal__content special-deals__hidden">
+                <div class="modal__header">
+                    <i class="fas fa-gift special-deals__icon"></i>
+                    <h2 class="special-deals__title">SPECIAL DEALS</h2>
+                </div>
+                <p class="special-deals__subtitle">Unlocked Deals</p>
+                <p class="special-deals__description">
+                    All the deals you&apos;ve unlocked yet!
+                </p>
+
+                <div class="special-deals__unlocked-cards">
+                    <div class="special-deals__card">
+                        <div class="special-deals__card-left">
+                            <p class="special-deals__discount">20% Off Flights</p>
+                            <p class="special-deals__expiry">Expires in 7d</p>
+                        </div>
+                        <div class="special-deals__card-right">
+                            <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                            <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
+                        </div>
+                    </div>
+                    <div class="special-deals__card">
+                        <div class="special-deals__card-left">
+                            <p class="special-deals__discount">20% Off Flights</p>
+                            <p class="special-deals__expiry">Expires in 7d</p>
+                        </div>
+                        <div class="special-deals__card-right">
+                            <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                            <button class="special-deals__copy-button"><i class="far fa-clone"></i></button>
+                        </div>
+                    </div>
+                    <div class="special-deals__card special-deals__card--expired">
+                        <div class="special-deals__card-left">
+                            <p class="special-deals__discount">20% Off Flights</p>
+                            <p class="special-deals__expiry special-deals__expiry--expired">Expires in 7d</p>
+                        </div>
+                        <div class="special-deals__card-right">
+                            <div class="special-deals__coupon-code">FLY20-ABCD</div>
+                            <button class="special-deals__copy-button special-deals__copy-button--expired"><i class="far fa-clone"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="prevBtn" class="btn btn--muted special-deals__view-deals-btn">Go Back</button>
+                <button class="modal__close-btn closeBtn"><i class="fas fa-times"></i></button>
+            </div>
+        </dialog>
+
+    </section>
+
     <script type="module" src="./src/script/index.js"></script>
+    <script type="module" src="./src/script/deals.js"></script>
+
 </body>
 
 </html>

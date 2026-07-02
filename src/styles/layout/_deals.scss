@@ -1,0 +1,124 @@
+@use '../abstracts/' as *;
+
+.special-deals {
+
+    &__icon {
+        font-size: 1.6rem;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        letter-spacing: 10%;
+    }
+
+    &__subtitle {
+        font-size: 2rem;
+        font-weight: $font-weight-700;
+    }
+
+    &__description {
+        color: $grey-color;
+        font-size: 1.2rem;
+        font-weight: $font-weight-400;
+    }
+
+    &__loading-text {
+        font-size: 1.2rem;
+        font-weight: $font-weight-400;
+    }
+
+    &__view-deals-btn {
+        border: 1px solid $light-background-color;
+        font-weight: $font-weight-700;
+        @include flex(row, center, center, 1rem);
+        font-size: 1.4rem;
+        width: 100%;
+    }
+
+    &__count {
+        background-color: $primary-color;
+        width: 1.8rem;
+        height: 1.8rem;
+        @include flex-center;
+        color: $background-color;
+        border-radius: 50%;
+    }
+
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__result {
+        @include flex(column, center, center, 1rem);
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    &__message {
+        font-weight: $font-weight-700;
+        font-size: 1.2rem;
+    }
+
+    &__card {
+        border: 1px solid #F4436C33;
+        border-radius: 16px;
+        @include flex($justify: space-between);
+        padding: 1.6rem;
+        background: linear-gradient(90deg, rgba(244, 67, 108, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+        width: 100%;
+
+        &--expired {
+            background-color: $light-background-color;
+        }
+    }
+
+    &__card-right {
+        @include flex($gap: 1rem);
+        height: fit-content;
+    }
+
+    &__discount {
+        font-weight: $font-weight-600;
+        font-size: 1.4rem;
+    }
+
+    &__expiry {
+        font-weight: $font-weight-400;
+        font-size: 1.2rem;
+        color: #7C3AED;
+
+        &--expired {
+            color: $grey-dark-color;
+        }
+    }
+
+    &__coupon-code {
+        font-weight: $font-weight-700;
+        letter-spacing: 5%;
+        font-size: 1.2rem;
+        padding: 4px 10px 4px 10px;
+        border-radius: 8px;
+        border: 1px solid #E5E7EB;
+        background-color: $background-color;
+    }
+
+    &__copy-button {
+        color: $secondary-color;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &--expired {
+            color: $grey-dark-color;
+        }
+    }
+
+    &__unlocked-cards {
+        @include flex(column, center, center, 1rem);
+        min-width: 312px;
+    }
+
+    &__hidden {
+        display: none;
+    }
+}
