@@ -7,17 +7,19 @@ const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 const closeBtns = document.querySelectorAll(".closeBtn");
 
-function showModal(modal) {
-    modal.classList.add("special-deals__modal--active");
-}
+const hamburger = document.getElementById('hamburgerBtn');
+const navMenu = document.getElementById('navMenu');
 
-function hideModal(modal) {
-    modal.classList.remove("special-deals__modal--active");
+function closeMenu() {
+    navMenu.classList.remove('navigation__menu--open');
+    navMenu.hidden = true;
+    hamburger.setAttribute('aria-expanded', false);
 }
 
 // Open first modal
 openModal.addEventListener("click", (e) => {
     e.preventDefault(); // Prevent page reload
+    if (navMenu.classList.contains('navigation__menu--open')) closeMenu();
     modal1.showModal();
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
