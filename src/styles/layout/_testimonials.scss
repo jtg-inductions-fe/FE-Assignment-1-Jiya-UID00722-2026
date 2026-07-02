@@ -89,7 +89,7 @@
 
     @include media-up(sm) {
         padding: 1.2rem 0;
-        background-image: url("/src/assets/images/testimonials/testimonial-bg.png");
+        background-image: url('#{$images-base-url}/testimonials/testimonial-bg.png');
         background-size: cover;
         background-position: center 48%;
         background-repeat: no-repeat;
