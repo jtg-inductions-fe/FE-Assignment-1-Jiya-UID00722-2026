@@ -63,7 +63,7 @@ const loading = document.getElementById("loading");
 const content = document.getElementById("content");
 
 function setLoading(isLoading) {
-    loading.classList.toggle("wheel-container--hidden", !isLoading);
+    loading.classList.toggle("wheel__container--hidden", !isLoading);
     content.classList.toggle("wheel--hidden", isLoading);
 }
 

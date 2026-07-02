@@ -1,14 +1,5 @@
 @use '../abstracts/' as *;
 
-.wheel-container {
-    position: relative;
-    @include flex(column, center, center);
-
-    &--hidden {
-        display: none;
-    }
-}
-
 .wheel {
     width: 227px;
     height: 227px;
@@ -41,6 +32,15 @@
 
     &--hidden {
         display: none;
+    }
+
+    &__container {
+        position: relative;
+        @include flex(column, center, center);
+
+        &--hidden {
+            display: none;
+        }
     }
 
 
