@@ -1,30 +1,6 @@
 @use '../abstracts/' as *;
 
 .special-deals {
-    &__modal {
-        border: none;
-        padding: 0;
-        background: transparent;
-        margin: auto;
-        &::backdrop {
-            background: rgba(0, 0, 0, 0.5);
-        }
-    }
-
-    &__content {
-        background: white;
-        padding: 20px;
-        border-radius: 24px;
-        position: relative;
-        @include flex(column, center, center, 0.8rem);
-        min-width: 360px;
-    }
-
-    &__header {
-        color: $secondary-color;
-        font-weight: $font-weight-600;
-        @include flex($gap: 1rem);
-    }
 
     &__icon {
         font-size: 1.6rem;
@@ -44,52 +20,6 @@
         color: $grey-color;
         font-size: 1.2rem;
         font-weight: $font-weight-400;
-    }
-
-    &__close-btn {
-        position: absolute;
-        top: 1.5rem;
-        right: 2rem;
-        font-size: 2rem;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-    }
-
-    &__wheel {
-        width: 227px;
-        height: 227px;
-        margin-top: 1rem;
-        position: relative;
-        border-radius: 50%;
-        border: 4px solid $background-color;
-        overflow: hidden;
-
-        background: conic-gradient($background-color 0deg 0deg,
-                #ef476f 1deg 89deg,
-                $background-color 89deg 90deg,
-                #6c3ce9 91deg 179deg,
-                $background-color 179deg 180deg,
-                #fcbf29 181deg 269deg,
-                $background-color 269deg 270deg,
-                #19b5d8 271deg 359deg,
-                $background-color 359deg 360deg);
-
-        transition: transform 5s cubic-bezier(.17, .67, .25, 1);
-
-        box-shadow: 0px 0px 50px 7px #00000040;
-
-        &--loading {
-            background: $light-background-color;
-            border-radius: 50%;
-            @include flex-center;
-            position: relative;
-        }
-
-        &--hidden {
-            display: none;
-        }
-
     }
 
     &__loading-text {
@@ -116,88 +46,6 @@
 
     &__wrapper {
         width: 100%;
-    }
-
-    &__wheel-container {
-        position: relative;
-        @include flex(column, center, center);
-
-        &--hidden {
-            display: none;
-        }
-    }
-
-    &__pointer {
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 15px solid #ff4f6d;
-        z-index: 1;
-
-        &--loading {
-            border-top: 15px solid $grey-dark-color;
-        }
-    }
-
-    &__label {
-        position: absolute;
-        width: 70px;
-        text-align: center;
-        color: $background-color;
-        font-weight: bold;
-        font-size: 1.2rem;
-        line-height: 20px;
-    }
-
-    &__label:nth-child(1) {
-        top: 45px;
-        left: 120px;
-        transform: rotate(45deg);
-    }
-
-    &__label:nth-child(2) {
-        top: 130px;
-        left: 120px;
-        transform: rotate(135deg);
-    }
-
-    &__label:nth-child(3) {
-        bottom: 45px;
-        left: 30px;
-        color: #000;
-        transform: rotate(225deg);
-    }
-
-    &__label:nth-child(4) {
-        top: 45px;
-        left: 28px;
-        transform: rotate(-45deg);
-    }
-
-    &__spin-btn {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 44px;
-        height: 44px;
-        border: 3px solid #F4436C;
-        border-radius: 50%;
-        background: $background-color;
-        color: #ff4f6d;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 10;
-    }
-
-    &__spin-btn:disabled {
-        cursor: not-allowed;
     }
 
     &__result {

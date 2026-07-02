@@ -56,8 +56,8 @@ const loading = document.getElementById("loading");
 const content = document.getElementById("content");
 
 function setLoading(isLoading) {
-    loading.classList.toggle("special-deals__wheel-container--hidden", !isLoading);
-    content.classList.toggle("special-deals__wheel--hidden", isLoading);
+    loading.classList.toggle("wheel-container--hidden", !isLoading);
+    content.classList.toggle("wheel--hidden", isLoading);
 }
 
 // Show loading
@@ -82,7 +82,7 @@ prizes.forEach((prize, index) => {
     const angle = (360 / prizes.length) * index + (360 / prizes.length) / 2;
 
     const label = document.createElement("div");
-    label.className = "special-deals__label";
+    label.className = "wheel__label";
     label.textContent = prize;
 
     wheel.appendChild(label);

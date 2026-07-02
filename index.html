@@ -338,10 +338,10 @@
 
     <section class="special-deals">
         <!-- Modal 1 -->
-        <dialog id="modal1" class="special-deals__modal">
+        <dialog id="modal1" class="modal">
             <!-- Screen 1 -->
-            <div id="screen1" class="special-deals__content">
-                <div class="special-deals__header">
+            <div id="screen1" class="modal__content">
+                <div class="modal__header">
                     <i class="fas fa-gift special-deals__icon"></i>
                     <h2 class="special-deals__title"> SPECIAL DEALS</h2>
                 </div>
@@ -351,22 +351,22 @@
                 </p>
 
                 <div class="special-deals__wrapper">
-                    <div id="loading" class="special-deals__wheel-container">
-                        <div class="special-deals__wheel special-deals__wheel--loading">
+                    <div id="loading" class="wheel-container">
+                        <div class="wheel wheel--loading">
                             <p class="special-deals__loading-text">Loading...</p>
                         </div>
-                        <div class="special-deals__pointer special-deals__pointer--loading"></div>
+                        <div class="wheel__pointer wheel__pointer--loading"></div>
                     </div>
                     <div id="content" class="special-deals__wrapper">
 
-                        <div class="special-deals__wheel-container">
+                        <div class="wheel-container">
 
-                            <div class="special-deals__pointer"></div>
+                            <div class="wheel__pointer"></div>
 
-                            <div class="special-deals__wheel" id="wheel">
+                            <div class="wheel" id="wheel">
                             </div>
 
-                            <button class="special-deals__spin-btn" id="spin">Spin</button>
+                            <button class="wheel__spin-btn" id="spin">Spin</button>
 
                         </div>
 
@@ -391,12 +391,12 @@
                     </div>
 
                 </div>
-                <button class="special-deals__close-btn closeBtn"><i class="fas fa-times"></i></button>
+                <button class="modal__close-btn closeBtn"><i class="fas fa-times"></i></button>
             </div>
 
             <!-- Screen 2 -->
-             <div id="screen2" class="special-deals__content special-deals__hidden">
-                <div class="special-deals__header">
+             <div id="screen2" class="modal__content special-deals__hidden">
+                <div class="modal__header">
                     <i class="fas fa-gift special-deals__icon"></i>
                     <h2 class="special-deals__title">SPECIAL DEALS</h2>
                 </div>
@@ -439,7 +439,7 @@
                 </div>
 
                 <button id="prevBtn" class="btn btn--muted special-deals__view-deals-btn">Go Back</button>
-                <button class="special-deals__close-btn closeBtn"><i class="fas fa-times"></i></button>
+                <button class="modal__close-btn closeBtn"><i class="fas fa-times"></i></button>
             </div>
         </dialog>
 

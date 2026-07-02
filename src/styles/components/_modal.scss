@@ -1,0 +1,37 @@
+@use '../abstracts/' as *;
+
+.modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    margin: auto;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__content {
+        background: white;
+        padding: 20px;
+        border-radius: 24px;
+        position: relative;
+        @include flex(column, center, center, 0.8rem);
+        min-width: 360px;
+    }
+
+    &__header {
+        color: $secondary-color;
+        font-weight: $font-weight-600;
+        @include flex($gap: 1rem);
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+}
