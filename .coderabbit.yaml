@@ -1,0 +1,48 @@
+# CodeRabbit Configuration for Frontend Assignment (HTML/SCSS/Vanilla JS)
+# Version: 1.0
+
+version: "1.0"
+
+language:
+  javascript:
+    strict_mode: true
+  css:
+    strict_mode: true
+
+reviews:
+  profile: "thorough" # Essential for catching logic errors in your Spin & Win wheel, API handling, and CSS flaws.
+  request_review_trigger: "auto" # Recommended 'auto' so you get instant feedback on your 1st PR for Netlify deployment visibility.
+
+  # Directives to instruct the AI what rules it must evaluate against
+  directives:
+    - "Ensure all styling follows a strict Mobile-First approach (min-width media queries instead of max-width)."
+    - "Enforce the BEM (Block-Element-Modifier) naming convention strictly in all SCSS files."
+    - "Reject any Pull Request that introduces UI frameworks like Bootstrap or Material UI; enforce pure semantic HTML5, CSS Grid, and Flexbox."
+    - "Check for comprehensive JSDoc comments on all JavaScript functions (especially API fetching, Wheel spinning logic, and date sorting) and standard SCSS comments/mixins."
+    - "Flag any use of <table>, <tr>, or <td> tags used for layout purposes."
+    - "Verify semantic HTML usage (nav, section, footer, main) and ensure all images have meaningful 'alt' attributes."
+    - "Monitor JavaScript code for clean async/await API handling, proper state management for won deals, relative date calculations, and DOM manipulation best practices (like Event Delegation)."
+    - "Scan for keyboard accessibility (ensure interactive elements use buttons/anchors, have visible :focus states, and are tabbable)."
+
+  tools:
+    cybersecurity:
+      enabled: true # Catches exposed API keys or unvalidated data handling from the gist API
+    linters:
+      enabled: true
+    ast_diff:
+      enabled: true
+
+  # Filter out irrelevant boilerplate code to save time and review noise
+  path_filters:
+    - "!node_modules/**"
+    - "!README.md"
+    - "!.gitignore"
+    - "!package-lock.json"
+    - "!package.json"
+
+# Allows you to ask CodeRabbit questions directly in the PR comments (e.g., "How can I optimize this wheel animation?")
+chat:
+  auto_reply: true
+
+code_modifiers:
+  standard_format: true
